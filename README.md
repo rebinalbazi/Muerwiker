@@ -1,10 +1,10 @@
-# SPA Authentication using Laravel 9 Sanctum, Vue 3 and Vite
+# How to install
 
 ```
 composer install
 cp .env.example .env
 php artisan key:generate
-php artisan migrate
+php artisan migrate:fresh
 npm install
 npm run dev
 php artisan serve
