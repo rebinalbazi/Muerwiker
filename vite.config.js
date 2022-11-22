@@ -5,7 +5,13 @@ import path from 'path'
 
 export default defineConfig({
     plugins: [
-        vue(),
+        vue({
+            template: {
+              compilerOptions: {
+                isCustomElement: (tag) => ['Navbar'].includes(tag),
+              }
+            }
+          }),
         laravel([
             'resource/scss/app.scss',
             'resources/js/app.js',

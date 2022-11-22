@@ -1,52 +1,140 @@
-import { createWebHistory, createRouter } from 'vue-router'
+import {
+    createWebHistory,
+    createRouter
+} from 'vue-router'
 import store from '@/store'
 
-/* Guest Component */
-const Login = () => import('@/components/Login.vue')
-const Register = () => import('@/components/Register.vue')
-/* Guest Component */
+const Login = () => import('@/components/admin/Login.vue')
+const Register = () => import('@/components/admin/Register.vue')
 
-/* Layouts */
-const DahboardLayout = () => import('@/components/layouts/Default.vue')
-/* Layouts */
+const AppLayoutAdmin = () => import('@/components/admin/layouts/AppLayout.vue')
+const AppLayoutUser = () => import('@/components/user/layouts/AppLayout.vue')
 
-/* Authenticated Component */
-const Dashboard = () => import('@/components/Dashboard.vue')
-/* Authenticated Component */
+const Art = () => import('@/components/Art.vue')
+const Standort = () => import('@/components/Standort.vue')
+const Infos = () => import('@/components/Infos.vue')
+const Ort = () => import('@/components/Ort.vue')
 
-
-const routes = [
+const routes = [{
+        path: "/:catchAll(.*)",
+        redirect: {
+            name: '/art'
+        },
+        
+    },
+    {
+        path: "/",
+        component: AppLayoutUser,
+        children: [{
+                name: "/user",
+                path: '/',
+                component: Art,
+                meta: {
+                    title: `User`
+                },
+            },
+            {
+                name: "/art",
+                path: '/art',
+                component: Art,
+                meta: {
+                    title: `Art`
+                }
+            },
+            {
+                name: "/ort",
+                path: '/ort',
+                component: Ort,
+                meta: {
+                    title: `Ort`
+                }
+            },
+            {
+                name: "/standort",
+                path: '/standort',
+                component: Standort,
+                meta: {
+                    title: `Standort`
+                }
+            },
+            {
+                name: "/infos",
+                path: '/infos',
+                component: Infos,
+                meta: {
+                    title: `Infos`
+                }
+            }
+        ]
+    },
     {
         name: "login",
-        path: "/login",
+        path: "/admin/login",
         component: Login,
         meta: {
             middleware: "guest",
-            title: `Login`
+            title: `Anmeldung`
         }
     },
     {
         name: "register",
-        path: "/register",
+        path: "/admin/register",
         component: Register,
         meta: {
             middleware: "guest",
-            title: `Register`
+            title: `Registrierung`
         }
     },
     {
-        path: "/",
-        component: DahboardLayout,
+        path: "/admin/:catchAll(.*)",
+        redirect: {
+            name: 'art'
+        },
+    },
+    {
+        path: "/admin/",
+        component: AppLayoutAdmin,
         meta: {
             middleware: "auth"
         },
-        children: [
-            {
-                name: "dashboard",
-                path: '/',
-                component: Dashboard,
+        children: [{
+                name: "admin",
+                path: '/admin/',
+                component: Art,
                 meta: {
-                    title: `Dashboard`
+                    title: `Admin`
+                }
+            },
+            {
+                name: "art",
+                path: '/admin/art',
+                component: Art,
+                meta: {
+                    title: `Art`
+                }
+            },
+            {
+                name: "ort",
+                path: '/admin/ort',
+                component: Ort,
+                meta: {
+                    title: `Ort`
+                }
+            },
+            {
+                name: "standort",
+                path: '/admin/standort',
+                component: Standort,
+                meta: {
+                    title: `Standort`
+                }
+            },
+            {
+                name: "infos",
+                path: '/admin/infos',
+                component: Infos,
+                meta: {
+                    title: `Infos`
                 }
             }
         ]
@@ -62,14 +150,18 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title
     if (to.meta.middleware == "guest") {
         if (store.state.auth.authenticated) {
-            next({ name: "dashboard" })
+            next({
+                name: "art"
+            })
         }
         next()
     } else {
         if (store.state.auth.authenticated) {
             next()
         } else {
-            next({ name: "login" })
+            next({
+                name: "login"
+            })
         }
     }
 })
