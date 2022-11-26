@@ -15,54 +15,63 @@ const Standort = () => import('@/components/Standort.vue')
 const Infos = () => import('@/components/Infos.vue')
 const Ort = () => import('@/components/Ort.vue')
 
-const routes = [{
+const routes = [
+    {
         path: "/:catchAll(.*)",
         redirect: {
-            name: '/art'
+            name: '/'
         },
-        
+        component: Art,
     },
     {
         path: "/",
         component: AppLayoutUser,
         children: [{
-                name: "/user",
+                name: "/",
                 path: '/',
                 component: Art,
                 meta: {
-                    title: `User`
+                    title: `Die Mürwiker`
                 },
             },
             {
-                name: "/art",
-                path: '/art',
-                component: Art,
-                meta: {
-                    title: `Art`
-                }
-            },
-            {
-                name: "/ort",
-                path: '/ort',
+                name: "/:art",
+                path: '/:art',
                 component: Ort,
                 meta: {
-                    title: `Ort`
+                    title: `Die Mürwiker - Ort`
                 }
             },
             {
-                name: "/standort",
-                path: '/standort',
+                name: "/:art/:ort",
+                path: '/:art/:ort',
                 component: Standort,
                 meta: {
-                    title: `Standort`
+                    title: `Die Mürwiker - Standort`
                 }
             },
             {
-                name: "/infos",
-                path: '/infos',
+                name: "/:art/:ort/:infos",
+                path: '/:art/:ort/:infos',
                 component: Infos,
                 meta: {
-                    title: `Infos`
+                    title: `Die Mürwiker - Infos`
+                }
+            },
+            {
+                name: "/tagesstaette/:ort",
+                path: '/tagesstaette/:ort',
+                component: Infos,
+                meta: {
+                    title: `Die Mürwiker - Infos`
+                }
+            },
+            {
+                name: "/verwaltung",
+                path: '/verwaltung',
+                component: Infos,
+                meta: {
+                    title: `Die Mürwiker - Infos`
                 }
             }
         ]
@@ -107,7 +116,7 @@ const routes = [{
             },
             {
                 name: "art",
-                path: '/admin/art',
+                path: '/admin',
                 component: Art,
                 meta: {
                     title: `Art`
@@ -123,7 +132,7 @@ const routes = [{
             },
             {
                 name: "standort",
-                path: '/admin/standort',
+                path: '/admin/:art/:standort',
                 component: Standort,
                 meta: {
                     title: `Standort`

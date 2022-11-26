@@ -7,11 +7,11 @@
         <sidebar/>
       </div>
 
-      <div class="app-layout__page">
+      <!-- <div class="app-layout__page">
         <div class="gutter">
           <router-view />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

@@ -5,17 +5,17 @@
       class="sidebar-accordion va-sidebar__menu__inner"
       multiply
     >
-      <va-collapse v-for="item in items" :key="item.title">
+      <!-- <va-collapse v-for="item in items" :key="item.title">
         <template #header>
           <va-sidebar-item :active="isRouteActive(item)" :to="item.name">
             <va-sidebar-item-content>
-              <va-sidebar-item-title>
+              <va-sidebar-item-title style="flex-grow:0">
                 {{ item.displayName }}
               </va-sidebar-item-title>
             </va-sidebar-item-content>
           </va-sidebar-item>
         </template>
-      </va-collapse>
+      </va-collapse> -->
     </va-accordion>
     <va-accordion
       v-model="accordionValue"
@@ -76,10 +76,6 @@ $tabletBreakPointPX: 768px;
       align-items: center;
     }
   }
-}
-
-.sidebar-accordion va-sidebar__menu__inner__infoscreen{
-  
 }
 
 .gutter {

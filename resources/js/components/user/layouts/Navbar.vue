@@ -1,13 +1,23 @@
 <template>
   <va-navbar color="#262824" shape class="mb-2">
     <template #left>
-      <va-navbar-item>Muerwiker</va-navbar-item>
+      <a class="navbar-brand" href="/">
+        <n-image
+          src="https://www.muerwiker.de/typo3conf/ext/h2template/Resources/Public/Images/logomuerr.png"
+          width="250"
+          preview-disabled
+        />
+      </a>
     </template>
+
     <template #center>
       <va-collapse v-for="item in items" :key="item.title">
         <template #header>
-          <va-sidebar-item :active="isRouteActive(item)" :to="item.name">
-            <div class="app-layout__sidebar-wrapper">
+          <va-sidebar-item
+            :active="isRouteActive(item)"
+            disabled
+          >
+            <div class="app-layout__sidebar-wrapper" >
               <va-accordion
                 v-model="accordionValue"
                 class="sidebar-accordion va-sidebar__menu__inner"
@@ -27,14 +37,11 @@
 
     <template #right>
       <app-navbar-actions class="app-navbar__actions" />
-      <va-sidebar-item
-        :active="isRouteActiveAdmin('admin/art')"
-        :to="'admin/art'"
-      >
+      <va-sidebar-item :active="isRouteActiveAdmin('admin')" :to="'admin'">
         <div class="app-layout__sidebar-wrapper">
           <va-accordion>
             <va-sidebar-item-content>
-              <va-sidebar-item-title> Zum Admin </va-sidebar-item-title>
+              <va-sidebar-item-title>Zum Admin</va-sidebar-item-title>
             </va-sidebar-item-content>
           </va-accordion>
         </div>
@@ -65,6 +72,7 @@ function isRouteActiveAdmin(item) {
   font-size: 30px;
   border-left: 0px;
 }
+
 .va-sidebar__item {
   text-decoration: none;
   color: unset !important;
@@ -72,9 +80,26 @@ function isRouteActiveAdmin(item) {
 
   &__content {
     min-height: 65px;
+    min-width: 90px;
+    text-align: center;
+    font-size: 18px;
+
+    .va-sidebar-item {
+      .va-sidebar-item--active {
+        .Infos {
+          background-color: white;
+        }
+      }
+    }
   }
 }
+
 .app-navbar__actions {
   padding-left: 50px;
 }
+
+.va-navbar__center {
+  pointer-events: none;
+}
+
 </style>

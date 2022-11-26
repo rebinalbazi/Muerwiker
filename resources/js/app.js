@@ -5,7 +5,6 @@ import store from '@/store'
 
 import { createApp } from 'vue/dist/vue.esm-bundler';
 import naive from 'naive-ui'
-
 import { createVuestic } from 'vuestic-ui'
 
 const app = createApp({})

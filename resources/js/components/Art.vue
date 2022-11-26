@@ -1,42 +1,59 @@
 <template>
-  <div class="art">
-    <div class="row row-equal">
-      <div class="flex xs12 x16">
-        <va-card>
-          <va-card-title>
-            <h4 style="text-transform: none">Art</h4>
-          </va-card-title>
-          <va-card-content style="padding-left: 10px; padding-left: 10px">
-          </va-card-content>
-        </va-card>
-      </div>
+  <div class="row">
+    <div class="col-md-4" style="padding: 12px" v-for="art in arten" :key="art.id">
+        <router-link style="text-decoration: none" :to="`/${art.urlName}`">
+        <n-list hoverable bordered>
+          <n-list-item style="padding: 12px">
+            <div class="row">
+              <div class="col-md-3">
+                <img v-bind:src="art.iconPath" style="max-width: 100%" />
+              </div>
+              <div class="col-md-9" style="margin: auto; vertical-align: middle">
+                <h1 style="text-transform: none">
+                  <strong>{{ art.bezeichnung }}</strong>
+                </h1>
+              </div>
+            </div>
+          </n-list-item>
+        </n-list>
+      </router-link>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import axios from "axios";
-import { defineComponent, ref } from "vue";
+import { ref } from "vue";
 
-export default defineComponent({
-  setup() {
-
-  }
-});
+let arten = ref([
+  {
+    id: "0",
+    bezeichnung: "Wohnen",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/25/25694.png",
+    urlName: "wohnen",
+  },
+  {
+    id: "1",
+    bezeichnung: "Arbeit",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/658/658120.png",
+    urlName: "arbeit",
+  },
+  {
+    id: "2",
+    bezeichnung: "Tagesstätte",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/4496/4496845.png",
+    urlName: "tagesstaette",
+  },
+  {
+    id: "3",
+    bezeichnung: "Verwaltung",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/1570/1570102.png",
+    urlName: "verwaltung",
+  },
+]);
 </script>
-
   
 <style lang="scss">
-.art {
-  .va-card {
-    margin-bottom: 0 !important;
-    &__title {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-  margin: 0rem 0rem 0rem 0rem;
-}
 
 </style>
   

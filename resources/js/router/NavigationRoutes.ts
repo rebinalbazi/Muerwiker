@@ -12,19 +12,19 @@ export default {
     },
     routesUser: [
         {
-            name: '/art',
+            name: '/',
             displayName: 'Art',
         },
         {
-            name: '/ort',
+            name: '/:art',
             displayName: 'Ort',
         },
         {
-            name: '/standort',
+            name: '/:art/:ort',
             displayName: 'Standort',
         },
         {
-            name: '/infos',
+            name: '/:art/:ort/:infos',
             displayName: 'Infos',
         }
     ] as INavigationRoute[],
