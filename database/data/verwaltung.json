@@ -1,0 +1,35 @@
+[{
+    "id": 1,
+    "bereich": "Personal",
+    "notfallnummer": "0151-18857333",
+    "ansprechpartner1_id": 26,
+    "ansprechpartner2_id": 27
+},
+{
+    "id": 2,
+    "bereich": "Finanzen",
+    "notfallnummer": "0151-18857333",
+    "ansprechpartner1_id": 28,
+    "ansprechpartner2_id": 29
+},
+{
+    "id": 3,
+    "bereich": "Betriebsrat",
+    "notfallnummer": "0176-11119277",
+    "ansprechpartner1_id": 30,
+    "ansprechpartner2_id": null
+},
+{
+    "id": 4,
+    "bereich": "Werkstattrat",
+    "notfallnummer": "0151-18857333",
+    "ansprechpartner1_id": 31,
+    "ansprechpartner2_id": 32
+},
+{
+    "id": 5,
+    "bereich": "Datenschutz & Arbeitssicherheit",
+    "notfallnummer": "0151-18857333",
+    "ansprechpartner1_id": 33,
+    "ansprechpartner2_id": 34
+}]

@@ -59,8 +59,8 @@ const routes = [
                 }
             },
             {
-                name: "/tagesstaette/:ort",
-                path: '/tagesstaette/:ort',
+                name: "/tagesstaette/:infos",
+                path: '/tagesstaette/:infos',
                 component: Infos,
                 meta: {
                     title: `Die Mürwiker - Infos`

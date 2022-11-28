@@ -1,0 +1,113 @@
+[{
+        "ort": "flensburg",
+        "strasse": "Raiffeisenstraße 12-14",
+        "arbeitsbereiche": "Elektro, Montage, Verpackung, Bändermontage, Lebensmittel",
+        "notfallnummer": "0151-59937077",
+        "ansprechpartner1_id": 13,
+        "ansprechpartner2_id": 14
+    },
+    {
+        "ort": "flensburg",
+        "strasse": "Raiffeisenstraße 8c",
+        "arbeitsbereiche": "Kaminholz",
+        "notfallnummer": "0151-59937077",
+        "ansprechpartner1_id": 13,
+        "ansprechpartner2_id": 14
+    },
+    {
+        "ort": "flensburg",
+        "strasse": "Raiffeisenstraße 17",
+        "arbeitsbereiche": "Gärtnerei",
+        "notfallnummer": "",
+        "ansprechpartner1_id": null,
+        "ansprechpartner2_id": null
+    },
+    {
+        "ort": "flensburg",
+        "strasse": "Wittenberger Weg 10",
+        "arbeitsbereiche": "Lebensmittelverpackung (LeMi)",
+        "notfallnummer": "0151-59937077",
+        "ansprechpartner1_id": 13,
+        "ansprechpartner2_id": 14
+    },
+    {
+        "ort": "flensburg",
+        "strasse": "Raiffeisenstraße 21",
+        "arbeitsbereiche": "Danfoss",
+        "notfallnummer": "0151-59937077",
+        "ansprechpartner1_id": 13,
+        "ansprechpartner2_id": 15
+    },
+    {
+        "ort": "flensburg",
+        "strasse": "Glyngöre",
+        "arbeitsbereiche": "Spektrum, Holz",
+        "notfallnummer": "0151-59937077",
+        "ansprechpartner1_id": 16,
+        "ansprechpartner2_id": 17
+    },
+    {
+        "ort": "flensburg",
+        "strasse": "Westerallee",
+        "arbeitsbereiche": "Spektrum, Verpackung, Nähen, GHC",
+        "notfallnummer": "0151-65259207",
+        "ansprechpartner1_id": 16,
+        "ansprechpartner2_id": 18
+    },
+    {
+        "ort": "flensburg",
+        "strasse": "Gewerbegrund",
+        "arbeitsbereiche": "Metall, Verpackung, Montage",
+        "notfallnummer": "0151-65259207",
+        "ansprechpartner1_id": 19,
+        "ansprechpartner2_id": 20
+    },
+    {
+        "ort": "flensburg",
+        "strasse": "Treeneweg 10",
+        "arbeitsbereiche": "Verpackung, Montage, Besen und Bürsten, LebensArt",
+        "notfallnummer": "0151-65259207",
+        "ansprechpartner1_id": 21,
+        "ansprechpartner2_id": 22
+    },
+    {
+        "ort": "niebuell",
+        "strasse": "Nova",
+        "arbeitsbereiche": "Nähen, Lego, Bürodienstleistungen, Elektro",
+        "notfallnummer": "0176-11119221",
+        "ansprechpartner1_id": 23,
+        "ansprechpartner2_id": 24
+    },
+    {
+        "ort": "niebuell",
+        "strasse": "Fritz-Jannsen-Straße",
+        "arbeitsbereiche": "Montage, KFZ-Pflege, Verpackung",
+        "notfallnummer": "0176-11119221",
+        "ansprechpartner1_id": 23,
+        "ansprechpartner2_id": 24
+    },
+    {
+        "ort": "niebuell",
+        "strasse": "Weberstraße",
+        "arbeitsbereiche": "Elektro, Küche",
+        "notfallnummer": "0176-11119221",
+        "ansprechpartner1_id": 23,
+        "ansprechpartner2_id": 24
+    },
+    {
+        "ort": "niebuell",
+        "strasse": "Schmiedestraße",
+        "arbeitsbereiche": "Holz , Garten",
+        "notfallnummer": "0176-11119221",
+        "ansprechpartner1_id": 23,
+        "ansprechpartner2_id": 24
+    },
+    {
+        "ort": "niebuell",
+        "strasse": "Bahnhofstraße",
+        "arbeitsbereiche": "Lager",
+        "notfallnummer": "0176-11119221",
+        "ansprechpartner1_id": 23,
+        "ansprechpartner2_id": 24
+    }
+]

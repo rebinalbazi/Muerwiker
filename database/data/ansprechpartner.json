@@ -1,0 +1,239 @@
+[{
+        "id": "1",
+        "name": "Niklas Neugebauer",
+        "telefon": "+49(461)50306556",
+        "email": "neugebauer@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "2",
+        "name": "Gerd Bänsch",
+        "telefon": "+49(461)50306902",
+        "email": "baensch@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "3",
+        "name": "Ingo Langbeehn",
+        "telefon": "+49(461)50306550",
+        "email": "langbehn@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "4",
+        "name": "Rita Peters",
+        "telefon": "+49(461)50306551",
+        "email": "r.peters@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "5",
+        "name": "Birgit Jaspersen",
+        "telefon": "+49(151)18857357",
+        "email": "jaspersen@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "6",
+        "name": "Doris Grothe",
+        "telefon": "+49(176)11119244",
+        "email": "grothe@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "7",
+        "name": "Dirk Heppner",
+        "telefon": "+49(176)11119289",
+        "email": "heppner@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "8",
+        "name": "Andreas Beier",
+        "telefon": "+49(151)18857358",
+        "email": "beier@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "9",
+        "name": "Stefan Holst",
+        "telefon": "+49(461)50306648",
+        "email": "holst@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "10",
+        "name": "Ela Nissen",
+        "telefon": "+49(461)50306608",
+        "email": "e.nissen@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "11",
+        "name": "Jörg Homberg",
+        "telefon": "+49(461)50306292",
+        "email": "homberg@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "12",
+        "name": "Frank Brodersen",
+        "telefon": "+49(461)50306633",
+        "email": "brodersen@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "13",
+        "name": "Carsten Bochmann",
+        "telefon": "+49(461)50306261",
+        "email": "bochmann@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "14",
+        "name": "Gerhard Rohde",
+        "telefon": "+49(461)50306690",
+        "email": "rohde@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "15",
+        "name": "Johannes Asmussen",
+        "telefon": "0160-8938011",
+        "email": "j.asmussen@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "16",
+        "name": "Frank Eßberger",
+        "telefon": "+49(461)50306269",
+        "email": "essberger@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "17",
+        "name": "Frieder Stockhaus",
+        "telefon": "0176-11119303",
+        "email": "stockhaus@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "18",
+        "name": "Mareile Heimann",
+        "telefon": "0176-11119268",
+        "email": "m.heimann@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "19",
+        "name": "Jörg Köster",
+        "telefon": "+49(461)50306771",
+        "email": "köster@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "20",
+        "name": "Kirsten Feddersen",
+        "telefon": "+49(461)50306257",
+        "email": "k.feddersen@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "21",
+        "name": "Sandra Bier",
+        "telefon": "+49(461)50306249",
+        "email": "bier@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "22",
+        "name": "Jan Euhus",
+        "telefon": "+49(461)50306714",
+        "email": "euhus@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "23",
+        "name": "Björn Freundlich",
+        "telefon": "0176-11119285",
+        "email": "freundlich@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "24",
+        "name": "Gunter Südel",
+        "telefon": "0176-11119277",
+        "email": "suedel@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "25",
+        "name": "Sylvia Bunn",
+        "telefon": "+49(176)11119272",
+        "email": "bunn@muerwiker-grupp.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "26",
+        "name": "Antje Kahl",
+        "telefon": "+49(461)50306686",
+        "email": "kahl@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "27",
+        "name": "Annette Sesemann",
+        "telefon": "+49(461)50306640",
+        "email": "sesemann@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "28",
+        "name": "Annika Faltin",
+        "telefon": "+49(461)50306237",
+        "email": "faltin@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "29",
+        "name": "Marc Schramm",
+        "telefon": "+49(461)50306331",
+        "email": "schramm@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "30",
+        "name": "Gunter Südel",
+        "telefon": "+49(461)50306259",
+        "email": "betriebsrat-muerwiker@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "31",
+        "name": "Nicholas Endlein",
+        "telefon": "0176-11119277",
+        "email": "werkstattrat@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "32",
+        "name": "Jana Wiedemeyer",
+        "telefon": "+49(461)50306732",
+        "email": "wiedemeyer@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "33",
+        "name": "Uwe Maßheimer",
+        "telefon": "0176-11119279",
+        "email": "massheimer@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "34",
+        "name": "Paul Greiner",
+        "telefon": "0461-50306264",
+        "email": "greiner@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    }
+]

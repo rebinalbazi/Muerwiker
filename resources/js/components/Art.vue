@@ -27,29 +27,29 @@ import { ref } from "vue";
 
 let arten = ref([
   {
-    id: "0",
+    id: "1",
     bezeichnung: "Wohnen",
     iconPath: "https://cdn-icons-png.flaticon.com/512/25/25694.png",
-    urlName: "wohnen",
-  },
-  {
-    id: "1",
-    bezeichnung: "Arbeit",
-    iconPath: "https://cdn-icons-png.flaticon.com/512/658/658120.png",
-    urlName: "arbeit",
+    urlName: "wohnen"
   },
   {
     id: "2",
-    bezeichnung: "Tagesstätte",
-    iconPath: "https://cdn-icons-png.flaticon.com/512/4496/4496845.png",
-    urlName: "tagesstaette",
+    bezeichnung: "Arbeit",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/658/658120.png",
+    urlName: "arbeiten"
   },
   {
     id: "3",
+    bezeichnung: "Tagesstätte",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/4496/4496845.png",
+    urlName: "tagesstaette"
+  },
+  {
+    id: "4",
     bezeichnung: "Verwaltung",
     iconPath: "https://cdn-icons-png.flaticon.com/512/1570/1570102.png",
-    urlName: "verwaltung",
-  },
+    urlName: "verwaltung"
+  }
 ]);
 </script>
   

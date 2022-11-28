@@ -3,6 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Database\Seeders\AnsprechpartnerSeeder;
+use Database\Seeders\WohnenSeeder;
+use Database\Seeders\ArbeitenSeeder;
+use Database\Seeders\TagesstaetteSeeder;
+use Database\Seeders\VerwaltungSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +19,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $this->call(AnsprechpartnerSeeder::class);
+        $this->call(WohnenSeeder::class);
+        $this->call(ArbeitenSeeder::class);
+        $this->call(TagesstaetteSeeder::class);
+        $this->call(VerwaltungSeeder::class);
     }
 }
