@@ -29,7 +29,7 @@ let arten = ref([
   {
     id: "1",
     bezeichnung: "Wohnen",
-    iconPath: "https://cdn-icons-png.flaticon.com/512/25/25694.png",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/4956/4956574.png",
     urlName: "wohnen"
   },
   {
@@ -41,19 +41,19 @@ let arten = ref([
   {
     id: "3",
     bezeichnung: "Tagesstätte",
-    iconPath: "https://cdn-icons-png.flaticon.com/512/4496/4496845.png",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/4506/4506184.png",
     urlName: "tagesstaette"
   },
   {
     id: "4",
     bezeichnung: "Verwaltung",
-    iconPath: "https://cdn-icons-png.flaticon.com/512/1570/1570102.png",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/1570/1570139.png",
     urlName: "verwaltung"
   },
   {
     id: "5",
     bezeichnung: "Sonstige",
-    iconPath: "https://cdn-icons-png.flaticon.com/512/2521/2521661.png",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/60/60492.png",
     urlName: "sonstige"
   }
 ]);

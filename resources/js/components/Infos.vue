@@ -81,7 +81,27 @@
         </n-list-item>
       </n-list>
     </div>
-  </div>
+    
+    <div class="col-md-1" style="padding: 12px; max-width: 100%">
+      <router-link style="text-decoration: none" :to="`/`">
+        <button class="homeButton" style="padding: 12px; width: 160px">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" style="max-width: 70px; margin-left: auto; margin-right: auto; display: block;"/>
+            <h4>
+              <strong>Home</strong>
+            </h4>
+          </button>
+        </router-link>
+        <form v-bind:action="'tel:' + notfallnummer">
+          <button class="warningDiv" style="padding: 12px; width: 160px">
+          <img src="https://cdn-icons-png.flaticon.com/512/179/179386.png" style="max-width: 70px;"/>
+            <h4>
+              <strong>Notfall</strong>
+            </h4>
+            <strong>{{ notfallnummer }}</strong>
+          </button>
+        </form>
+      </div>
+    </div>
 </template>
 
 <script setup>
@@ -91,13 +111,14 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 
+let notfallnummer = ref({})
 let ansprechpartner1 = ref({});
-
 let ansprechpartner2 = ref({});
 
 const getData = (art, param) => {
   axios.get("/api/ansprechpartner").then((response) => {
     axios.get("/api/" + art).then((r) => {
+    notfallnummer.value = Object.assign({}, ...r.data.filter((t) => t["id"] == param)).notfallnummer;
     let data = Object.assign({}, ...r.data.filter((t) => t["id"] == param));
     ansprechpartner1.value = Object.assign({}, ...response.data.filter((t) => t["id"] == data.ansprechpartner1_id));
     ansprechpartner2.value = Object.assign({}, ...response.data.filter((t) => t["id"] == data.ansprechpartner2_id));
@@ -144,6 +165,26 @@ onMounted(() => {
   margin-top: 10px;
   font-size: 17px;
   float: left;
+}
+
+.homeButton {
+  border-radius: 10px;
+  background: white;
+  border-color: #418bca;
+  border-width: 0.25ch;
+}
+
+.warningDiv {
+  padding: 0px 15px 0px 15px;
+  text-align: center;
+  vertical-align: middle;
+  border: solid;
+  border-radius: 10px;
+  border-color: red;
+  border-width: 0.1rem;
+  background: white;
+  margin-top: 20px;
+  border-width: 0.25ch;
 }
 
 // .Infos{
