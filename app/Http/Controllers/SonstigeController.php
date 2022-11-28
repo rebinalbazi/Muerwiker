@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Verwaltung;
+use App\Models\Sonstige;
 use Illuminate\Http\Request;
 
-class VerwaltungController extends Controller
+class SonstigeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class VerwaltungController extends Controller
      */
     public function index()
     {
-        $verwaltung = Verwaltung::all(['id','iconPath','bereich','notfallnummer','ansprechpartner1_id','ansprechpartner2_id']);
-        return response()->json($verwaltung);
+        $sonstige = Sonstige::all(['id','iconPath','bereich','notfallnummer','ansprechpartner1_id','ansprechpartner2_id']);
+        return response()->json($sonstige);
     }
 
     /**
@@ -42,10 +42,10 @@ class VerwaltungController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Verwaltung  $verwaltung
+     * @param  \App\Models\Sonstige  $sonstige
      * @return \Illuminate\Http\Response
      */
-    public function show(Verwaltung $verwaltung)
+    public function show(Sonstige $sonstige)
     {
         //
     }
@@ -53,10 +53,10 @@ class VerwaltungController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Verwaltung  $verwaltung
+     * @param  \App\Models\Sonstige  $sonstige
      * @return \Illuminate\Http\Response
      */
-    public function edit(Verwaltung $verwaltung)
+    public function edit(Sonstige $sonstige)
     {
         //
     }
@@ -65,10 +65,10 @@ class VerwaltungController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Verwaltung  $verwaltung
+     * @param  \App\Models\Sonstige  $sonstige
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Verwaltung $verwaltung)
+    public function update(Request $request, Sonstige $sonstige)
     {
         //
     }
@@ -76,10 +76,10 @@ class VerwaltungController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Verwaltung  $verwaltung
+     * @param  \App\Models\Sonstige  $sonstige
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Verwaltung $verwaltung)
+    public function destroy(Sonstige $sonstige)
     {
         //
     }

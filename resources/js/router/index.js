@@ -67,8 +67,16 @@ const routes = [
                 }
             },
             {
-                name: "/verwaltung",
-                path: '/verwaltung',
+                name: "/verwaltung/:infos",
+                path: '/verwaltung/:infos',
+                component: Infos,
+                meta: {
+                    title: `Die Mürwiker - Infos`
+                }
+            },
+            {
+                name: "/sonstige/:infos",
+                path: '/sonstige/:infos',
                 component: Infos,
                 meta: {
                     title: `Die Mürwiker - Infos`

@@ -1,6 +1,7 @@
 [{
     "id": 1,
     "bereich": "Personal",
+    "iconPath": "https://cdn-icons-png.flaticon.com/512/9040/9040270.png",
     "notfallnummer": "0151-18857333",
     "ansprechpartner1_id": 26,
     "ansprechpartner2_id": 27
@@ -8,6 +9,7 @@
 {
     "id": 2,
     "bereich": "Finanzen",
+    "iconPath": "https://cdn-icons-png.flaticon.com/512/5387/5387779.png",
     "notfallnummer": "0151-18857333",
     "ansprechpartner1_id": 28,
     "ansprechpartner2_id": 29
@@ -15,6 +17,7 @@
 {
     "id": 3,
     "bereich": "Betriebsrat",
+    "iconPath": "https://cdn-icons-png.flaticon.com/512/1965/1965701.png",
     "notfallnummer": "0176-11119277",
     "ansprechpartner1_id": 30,
     "ansprechpartner2_id": null
@@ -22,13 +25,15 @@
 {
     "id": 4,
     "bereich": "Werkstattrat",
+    "iconPath": "https://cdn-icons-png.flaticon.com/512/1535/1535041.png",
     "notfallnummer": "0151-18857333",
     "ansprechpartner1_id": 31,
     "ansprechpartner2_id": 32
 },
 {
     "id": 5,
-    "bereich": "Datenschutz & Arbeitssicherheit",
+    "bereich": "Datenschutz",
+    "iconPath": "https://cdn-icons-png.flaticon.com/512/1629/1629101.png",
     "notfallnummer": "0151-18857333",
     "ansprechpartner1_id": 33,
     "ansprechpartner2_id": 34

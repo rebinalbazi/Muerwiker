@@ -49,6 +49,12 @@ let arten = ref([
     bezeichnung: "Verwaltung",
     iconPath: "https://cdn-icons-png.flaticon.com/512/1570/1570102.png",
     urlName: "verwaltung"
+  },
+  {
+    id: "5",
+    bezeichnung: "Sonstige",
+    iconPath: "https://cdn-icons-png.flaticon.com/512/2521/2521661.png",
+    urlName: "sonstige"
   }
 ]);
 </script>

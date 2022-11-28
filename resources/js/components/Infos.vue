@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten' || (route.path).split('/')[1] == 'tagesstaette' || (route.path).split('/')[1] == 'verwaltung'|| (route.path).split('/')[1] == 'sonstige'">
     <div class="col-md-8" style="padding: 12px; max-width: 100%">
       <n-list bordered v-if="ansprechpartner1 !== null">
         <n-list-item style="padding: 12px; text-align: center; vertical-align: middle">
@@ -32,7 +32,7 @@
                 <strong style="font-size: 17px">Email:</strong>
               </div>
               <div class="infoDescription" style="height: 57px">
-                <strong style="font-size: 17px; padding: 0px 5px 0px 5px; overflow-wrap: break-word;">
+                <strong style="font-size: 17px; overflow-wrap: break-word;">
                   {{ ansprechpartner1.email }}
                   </strong>
               </div>
@@ -72,7 +72,7 @@
                 <strong style="font-size: 17px">Email:</strong>
               </div>
               <div class="infoDescription" style="height: 57px">
-                <strong style="font-size: 17px; padding: 0px 5px 0px 5px; overflow-wrap: break-word;">
+                <strong style="font-size: 17px; overflow-wrap: break-word;">
                   {{ ansprechpartner2.email }}
                   </strong>
               </div>
@@ -82,7 +82,6 @@
       </n-list>
     </div>
   </div>
-  {{ route.path }}
 </template>
 
 <script setup>
@@ -111,13 +110,11 @@ const getData = (art, param) => {
 };
 
 onMounted(() => {
-  if (!route.params.art) {
-    route.params.art = "tagesstaette"
-  }
-
   if (route.params.art) {
     getData(route.params.art, route.params.infos);
-  } 
+  } else {
+    getData((route.path).split('/')[1], route.params.infos);
+  }
 });
 </script>
 

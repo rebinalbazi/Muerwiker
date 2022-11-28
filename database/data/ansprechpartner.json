@@ -235,5 +235,33 @@
         "telefon": "0461-50306264",
         "email": "greiner@muerwiker-gruppe.de",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "35",
+        "name": "Sebastian Westphal",
+        "telefon": "+49(160)90750867",
+        "email": "westphal@fds-mail.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "36",
+        "name": "Olivia Münster",
+        "telefon": "+49(151)16257288",
+        "email": "muenster@fds-mail.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "37",
+        "name": "Ulrike Brandt",
+        "telefon": "0176-11119252",
+        "email": "u.brandt@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
+    },
+    {
+        "id": "38",
+        "name": "Timo Petersen",
+        "telefon": "+49(461)50306303",
+        "email": "timo.petersen@muerwiker-gruppe.de",
+        "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png"
     }
 ]

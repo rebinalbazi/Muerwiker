@@ -24,6 +24,7 @@ class VerwaltungSeeder extends Seeder
             Verwaltung::query()->updateOrCreate([
                 'id' => $v['id'],
                 'bereich' => $v['bereich'],
+                'iconPath' => $v['iconPath'],
                 'notfallnummer' => $v['notfallnummer'],
                 'ansprechpartner1_id' => $v['ansprechpartner1_id'],
                 'ansprechpartner2_id' => $v['ansprechpartner2_id']

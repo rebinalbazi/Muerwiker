@@ -8,7 +8,7 @@ use Database\Seeders\AnsprechpartnerSeeder;
 use Database\Seeders\WohnenSeeder;
 use Database\Seeders\ArbeitenSeeder;
 use Database\Seeders\TagesstaetteSeeder;
-use Database\Seeders\VerwaltungSeeder;
+use Database\Seeders\SonstigeSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ArbeitenSeeder::class);
         $this->call(TagesstaetteSeeder::class);
         $this->call(VerwaltungSeeder::class);
+        $this->call(SonstigeSeeder::class);
     }
 }

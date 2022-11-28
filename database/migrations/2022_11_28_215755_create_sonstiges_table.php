@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('verwaltungs', function (Blueprint $table) {
+        Schema::create('sonstiges', function (Blueprint $table) {
             $table->id();
             $table->string('bereich');
             $table->string('iconPath');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('verwaltungs');
+        Schema::dropIfExists('sonstiges');
     }
 };

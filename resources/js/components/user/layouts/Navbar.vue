@@ -36,8 +36,8 @@
     </template>
 
     <template #right>
-      <app-navbar-actions class="app-navbar__actions" />
-      <va-sidebar-item :active="isRouteActiveAdmin('admin')" :to="'admin'">
+      <app-navbar-actions  class="app-navbar__actions" />
+      <va-sidebar-item disabled :active="isRouteActiveAdmin('admin')" :to="'admin'">
         <div class="app-layout__sidebar-wrapper">
           <va-accordion>
             <va-sidebar-item-content>

@@ -17,7 +17,7 @@ export default {
         },
         {
             name: '/:art',
-            displayName: 'Ort',
+            displayName: 'Ort / Bereich',
         },
         {
             name: '/:art/:ort',

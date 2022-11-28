@@ -1,0 +1,24 @@
+[{
+    "id": 1,
+    "bereich": "Fahrdienst",
+    "iconPath": "https://cdn-icons-png.flaticon.com/512/1581/1581955.png",
+    "notfallnummer": "+49(461)70718421",
+    "ansprechpartner1_id": 35,
+    "ansprechpartner2_id": 36
+},
+{
+    "id": 2,
+    "bereich": "Begleitender Dienst",
+    "iconPath": "https://cdn-icons-png.flaticon.com/512/2351/2351112.png",
+    "notfallnummer": "0151-15146558",
+    "ansprechpartner1_id": 37,
+    "ansprechpartner2_id": 38
+},
+{
+    "id": 3,
+    "bereich": "Berufliche Bildung",
+    "iconPath": "https://cdn-icons-png.flaticon.com/512/3526/3526211.png",
+    "notfallnummer": "0151-15146558",
+    "ansprechpartner1_id": 37,
+    "ansprechpartner2_id": 38
+}]
