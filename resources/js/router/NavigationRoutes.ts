@@ -13,7 +13,7 @@ export default {
     routesUser: [
         {
             name: '/',
-            displayName: 'Art',
+            displayName: 'Home',
         },
         {
             name: '/:art',

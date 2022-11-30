@@ -1,4 +1,5 @@
 <template>
+  <backButton />
   <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten' || (route.path).split('/')[1] == 'tagesstaette' || (route.path).split('/')[1] == 'verwaltung'|| (route.path).split('/')[1] == 'sonstige'">
     <div class="col-md-8" style="padding: 12px; max-width: 100%">
       <n-list bordered v-if="ansprechpartner1 !== null">
@@ -32,7 +33,7 @@
                 <strong style="font-size: 17px">Email:</strong>
               </div>
               <div class="infoDescription" style="height: 57px">
-                <strong style="font-size: 17px; overflow-wrap: break-word;">
+                <strong style="font-size: 17px; overflow-wrap: break-word; padding-left: 5px">
                   {{ ansprechpartner1.email }}
                   </strong>
               </div>
@@ -72,7 +73,7 @@
                 <strong style="font-size: 17px">Email:</strong>
               </div>
               <div class="infoDescription" style="height: 57px">
-                <strong style="font-size: 17px; overflow-wrap: break-word;">
+                <strong style="font-size: 17px; overflow-wrap: break-word; padding-left: 5px;">
                   {{ ansprechpartner2.email }}
                   </strong>
               </div>
@@ -94,7 +95,7 @@
         <form v-bind:action="'tel:' + notfallnummer">
           <button class="warningDiv" style="padding: 12px; width: 160px">
           <img src="https://cdn-icons-png.flaticon.com/512/179/179386.png" style="max-width: 70px;"/>
-            <h4>
+            <h4 style="padding-top: 10px">
               <strong>Notfall</strong>
             </h4>
             <strong>{{ notfallnummer }}</strong>
@@ -105,6 +106,7 @@
 </template>
 
 <script setup>
+import BackButton from "./user/layouts/BackButton.vue";
 import axios from "axios";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";

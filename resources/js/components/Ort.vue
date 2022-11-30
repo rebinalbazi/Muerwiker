@@ -1,7 +1,8 @@
 <template>
+  <backButton />
   <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'">
-    <div class="col-md-3"></div>
-    <div class="col-md-3" style="padding: 12px" v-for="ort in orte" :key="ort.id">
+    <div class="col-3"></div>
+    <div class="col-3" style="padding: 12px;" v-for="ort in orte" :key="ort.id">
       <router-link style="text-decoration: none" :to="`/${route.params.art}/${ort.urlName}`">
         <n-list hoverable bordered>
           <n-list-item style="padding: 12px">
@@ -13,7 +14,7 @@
         <strong>{{ ort.name }}</strong>
       </h1>
     </div>
-    <div class="col-md-3"></div>
+    <div class="col-3"></div>
   </div>
 
   <div class="row" v-if="route.params.art == 'tagesstaette'">
@@ -34,7 +35,7 @@
   </div>
 
   <div class="row" v-if="route.params.art == 'verwaltung' || route.params.art == 'sonstige'">
-    <div class="col-md-2" style="padding: 12px" v-for="v in data" :key="v.id">
+    <div class="col-md-3" style="padding: 12px" v-for="v in data" :key="v.id">
       <router-link style="text-decoration: none" :to="`/${route.params.art}/${v.id}`">
         <n-list hoverable bordered>
           <n-list-item style="padding: 12px">
@@ -50,6 +51,7 @@
 </template>
 
 <script setup>
+  import BackButton from "./user/layouts/BackButton.vue";
   import axios from "axios";
   import { ref } from "vue";
   import { useRoute } from 'vue-router'

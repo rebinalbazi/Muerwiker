@@ -1,19 +1,13 @@
 <template>
   <div class="row">
-    <div class="col-md-4" style="padding: 12px" v-for="art in arten" :key="art.id">
-        <router-link style="text-decoration: none" :to="`/${art.urlName}`">
-        <n-list hoverable bordered>
+    <div class="col-md-4" style="padding: 12px;" v-for="art in arten" :key="art.id">
+      <router-link style="text-decoration: none;" :to="`/${art.urlName}`">
+        <n-list hoverable bordered style="margin:0px; overflow:hidden">
           <n-list-item style="padding: 12px">
-            <div class="row">
-              <div class="col-md-3">
-                <img v-bind:src="art.iconPath" style="max-width: 100%" />
-              </div>
-              <div class="col-md-9" style="margin: auto; vertical-align: middle">
-                <h1 style="text-transform: none">
-                  <strong>{{ art.bezeichnung }}</strong>
-                </h1>
-              </div>
-            </div>
+            <img v-bind:src="art.iconPath" style="max-width: 100%; max-height: 150px; float: left; padding: 10px;"/>
+            <h1 style="text-transform: none; text-align: center; max-width: 100%; float: left;">
+              <strong style="font-size: 25px">{{ art.bezeichnung }}</strong>
+            </h1>
           </n-list-item>
         </n-list>
       </router-link>

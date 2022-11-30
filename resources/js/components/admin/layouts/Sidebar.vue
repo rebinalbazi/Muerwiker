@@ -26,7 +26,7 @@
       <va-collapse >
         <template #header>
           <va-sidebar-item
-            :active="isRouteActiveUser('/home')"
+            :active="isRouteActiveUser('/')"
             :to="'/home'"
             style="position: absolute; bottom: 0;"
           >

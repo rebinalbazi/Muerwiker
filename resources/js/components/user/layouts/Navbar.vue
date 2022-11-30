@@ -2,10 +2,10 @@
   <va-navbar color="#262824" shape class="mb-2">
     <template #left>
       <a class="navbar-brand" href="/">
-        <n-image
+        <img
+          style="max-width: 100%; padding-right: 15px"
           src="https://www.muerwiker.de/typo3conf/ext/h2template/Resources/Public/Images/logomuerr.png"
-          width="250"
-          preview-disabled
+          width="200"
         />
       </a>
     </template>
@@ -13,22 +13,13 @@
     <template #center>
       <va-collapse v-for="item in items" :key="item.title">
         <template #header>
-          <va-sidebar-item
-            :active="isRouteActive(item)"
-            disabled
-          >
-            <div class="app-layout__sidebar-wrapper" >
-              <va-accordion
-                v-model="accordionValue"
-                class="sidebar-accordion va-sidebar__menu__inner"
-                multiply
-              >
-                <va-sidebar-item-content>
-                  <va-sidebar-item-title>
-                    {{ item.displayName }}
-                  </va-sidebar-item-title>
-                </va-sidebar-item-content>
-              </va-accordion>
+          <va-sidebar-item :active="isRouteActive(item)">
+            <div class="app-layout__sidebar-wrapper">
+              <va-sidebar-item-content>
+                <va-sidebar-item-title>
+                  {{ item.displayName }}
+                </va-sidebar-item-title>
+              </va-sidebar-item-content>
             </div>
           </va-sidebar-item>
         </template>
@@ -36,16 +27,13 @@
     </template>
 
     <template #right>
-      <app-navbar-actions  class="app-navbar__actions" />
-      <va-sidebar-item disabled :active="isRouteActiveAdmin('admin')" :to="'admin'">
+      <router-link :to="'admin'" style="text-decoration: none; color: white">
         <div class="app-layout__sidebar-wrapper">
-          <va-accordion>
-            <va-sidebar-item-content>
-              <va-sidebar-item-title>Zum Admin</va-sidebar-item-title>
-            </va-sidebar-item-content>
-          </va-accordion>
+          <va-sidebar-item-content>
+            <va-sidebar-item-title>Zum Admin</va-sidebar-item-title>
+          </va-sidebar-item-content>
         </div>
-      </va-sidebar-item>
+      </router-link>
     </template>
   </va-navbar>
 </template>
@@ -82,7 +70,7 @@ function isRouteActiveAdmin(item) {
     min-height: 65px;
     min-width: 90px;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
 
     .va-sidebar-item {
       .va-sidebar-item--active {
@@ -101,5 +89,4 @@ function isRouteActiveAdmin(item) {
 .va-navbar__center {
   pointer-events: none;
 }
-
 </style>

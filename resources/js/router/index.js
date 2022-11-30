@@ -26,12 +26,14 @@ const routes = [
     {
         path: "/",
         component: AppLayoutUser,
+        middleware: "user",
         children: [{
                 name: "/",
                 path: '/',
                 component: Art,
                 meta: {
-                    title: `Die Mürwiker`
+                    title: `Die Mürwiker`,
+                    middleware: "user",
                 },
             },
             {
@@ -39,7 +41,8 @@ const routes = [
                 path: '/:art',
                 component: Ort,
                 meta: {
-                    title: `Die Mürwiker - Ort`
+                    title: `Die Mürwiker - Ort`,
+                    middleware: "user",
                 }
             },
             {
@@ -47,7 +50,8 @@ const routes = [
                 path: '/:art/:ort',
                 component: Standort,
                 meta: {
-                    title: `Die Mürwiker - Standort`
+                    title: `Die Mürwiker - Standort`,
+                    middleware: "user",
                 }
             },
             {
@@ -55,7 +59,8 @@ const routes = [
                 path: '/:art/:ort/:infos',
                 component: Infos,
                 meta: {
-                    title: `Die Mürwiker - Infos`
+                    title: `Die Mürwiker - Infos`,
+                    middleware: "user",
                 }
             },
             {
@@ -63,7 +68,8 @@ const routes = [
                 path: '/tagesstaette/:infos',
                 component: Infos,
                 meta: {
-                    title: `Die Mürwiker - Infos`
+                    title: `Die Mürwiker - Infos`,
+                    middleware: "user",
                 }
             },
             {
@@ -71,7 +77,8 @@ const routes = [
                 path: '/verwaltung/:infos',
                 component: Infos,
                 meta: {
-                    title: `Die Mürwiker - Infos`
+                    title: `Die Mürwiker - Infos`,
+                    middleware: "user",
                 }
             },
             {
@@ -79,7 +86,8 @@ const routes = [
                 path: '/sonstige/:infos',
                 component: Infos,
                 meta: {
-                    title: `Die Mürwiker - Infos`
+                    title: `Die Mürwiker - Infos`,
+                    middleware: "user",
                 }
             }
         ]
@@ -89,7 +97,7 @@ const routes = [
         path: "/admin/login",
         component: Login,
         meta: {
-            middleware: "guest",
+            middleware: "admin",
             title: `Anmeldung`
         }
     },
@@ -98,7 +106,7 @@ const routes = [
         path: "/admin/register",
         component: Register,
         meta: {
-            middleware: "guest",
+            middleware: "admin",
             title: `Registrierung`
         }
     },
@@ -160,25 +168,23 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
-    routes, // short for `routes: routes`
+    routes
 })
 
 router.beforeEach((to, from, next) => {
-    document.title = to.meta.title
-    if (to.meta.middleware == "guest") {
-        if (store.state.auth.authenticated) {
-            next({
-                name: "art"
-            })
-        }
+    if (to.meta.middleware == "user") {
         next()
     } else {
-        if (store.state.auth.authenticated) {
+        if (to.meta.middleware == "admin") {
             next()
         } else {
-            next({
-                name: "login"
-            })
+            if (store.state.auth.authenticated) {
+                next()
+            } else {
+                next({
+                    name: "login"
+                })
+            }
         }
     }
 })

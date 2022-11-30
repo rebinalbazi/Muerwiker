@@ -1,4 +1,5 @@
 <template>
+  <backButton />
   <div class="row" v-if="route.params.art == 'wohnen'">
     <div class="col-md-3" style="padding: 12px"
       v-for="w in wohnen.filter((t) => t['ort'] == route.params.ort)" :key="w.id">
@@ -33,7 +34,9 @@
               <h5 style="text-transform: none;">
                 <strong style="font-size: 15px">Arbeitsbereiche:</strong>
               </h5>
-              {{ a.arbeitsbereiche }}
+              <form style="min-height: 90px">
+                {{ a.arbeitsbereiche }}
+              </form>
             </div>
           </n-list-item>
         </n-list>
@@ -43,6 +46,7 @@
 </template>
 
 <script setup>
+  import BackButton from "./user/layouts/BackButton.vue";
   import axios from "axios";
   import { ref } from "vue";
   import { useRoute } from "vue-router";
