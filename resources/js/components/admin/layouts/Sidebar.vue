@@ -21,15 +21,10 @@
       v-model="accordionValue"
       class="sidebar-accordion va-sidebar__menu__inner__infoscreen"
       multiply
-      
     >
       <va-collapse >
         <template #header>
-          <va-sidebar-item
-            :active="isRouteActiveUser('/')"
-            :to="'/home'"
-            style="position: absolute; bottom: 0;"
-          >
+          <va-sidebar-item :to="'/'" style="position: absolute; bottom: 0;">
             <va-sidebar-item-content>
               <va-sidebar-item-title> Zum Anwender Bereich </va-sidebar-item-title>
             </va-sidebar-item-content>

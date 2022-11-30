@@ -17,19 +17,19 @@
               </p>
             </div>
             <div class="col-md-8" style="padding-left: 20px; max-width: 100%">
-              <div class="infoTitle">
+              <div class="infoTitle" style="width: 32.5%">
                 <strong style="font-size: 17px">Name:</strong>
               </div>
               <div class="infoDescription">
                 <strong style="font-size: 17px">{{ ansprechpartner1.name }} </strong>
               </div>
-              <div class="infoTitle">
+              <div class="infoTitle" style="width: 32.5%">
                 <strong>Telefon:</strong>
               </div>
               <div class="infoDescription">
                 <strong style="font-size: 17px">{{ ansprechpartner1.telefon }}</strong>
               </div>
-              <div class="infoTitle" style="height: 57px">
+              <div class="infoTitle" style="height: 57px; width: 32.5%%">
                 <strong style="font-size: 17px">Email:</strong>
               </div>
               <div class="infoDescription" style="height: 57px">
@@ -57,20 +57,20 @@
               </p>
             </div>
             <div class="col-md-8" style="padding-left: 20px; max-width: 100%">
-              <div class="infoTitle">
+              <div class="infoTitle" style="width: 32.5%">
                 <strong style="font-size: 17px">Name:</strong>
               </div>
               <div class="infoDescription">
                 <strong style="font-size: 17px">{{ ansprechpartner2.name }}</strong>
               </div>
-              <div class="infoTitle">
+              <div class="infoTitle" style="width: 32.5%">
                 <strong>Telefon:</strong>
               </div>
               <div class="infoDescription">
                 <strong style="font-size: 17px">{{ ansprechpartner2.telefon }}</strong>
               </div>
-              <div class="infoTitle" style="height: 57px">
-                <strong style="font-size: 17px">Email:</strong>
+              <div class="infoTitle" style="height: 57px; width: 32.5%">
+                <strong style="font-size: 17px;">Email:</strong>
               </div>
               <div class="infoDescription" style="height: 57px">
                 <strong style="font-size: 17px; overflow-wrap: break-word; padding-left: 5px;">
@@ -189,7 +189,4 @@ onMounted(() => {
   border-width: 0.25ch;
 }
 
-// .Infos{
-//   background-color: rgb(44, 130, 224);
-// }
 </style>

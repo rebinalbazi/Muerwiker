@@ -1,8 +1,7 @@
 <template>
   <backButton />
   <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'">
-    <div class="col-3"></div>
-    <div class="col-3" style="padding: 12px;" v-for="ort in orte" :key="ort.id">
+    <div class="col col-lg-3" style="padding: 12px;" v-for="ort in orte" :key="ort.id">
       <router-link style="text-decoration: none" :to="`/${route.params.art}/${ort.urlName}`">
         <n-list hoverable bordered>
           <n-list-item style="padding: 12px">
@@ -14,7 +13,6 @@
         <strong>{{ ort.name }}</strong>
       </h1>
     </div>
-    <div class="col-3"></div>
   </div>
 
   <div class="row" v-if="route.params.art == 'tagesstaette'">

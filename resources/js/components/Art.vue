@@ -1,4 +1,13 @@
 <template>
+  <div class="search" >
+    <input class="searchField" type="text" placeholder="Suche" v-model="searchKey"/>
+    <router-link style="text-decoration: none;" :to="`/suche/${searchKey}`">
+    <button class="searchButton">
+      <img src="https://cdn-icons-png.flaticon.com/512/3031/3031293.png" style="max-width: 15px"/>
+    </button>
+  </router-link>
+  </div>
+
   <div class="row">
     <div class="col-md-4" style="padding: 12px;" v-for="art in arten" :key="art.id">
       <router-link style="text-decoration: none;" :to="`/${art.urlName}`">
@@ -19,6 +28,7 @@
 import axios from "axios";
 import { ref } from "vue";
 
+let searchKey = ref("");
 let arten = ref([
   {
     id: "1",
@@ -54,6 +64,22 @@ let arten = ref([
 </script>
   
 <style lang="scss">
+.searchField {
+  padding: 5px 0px 5px 10px;
+  min-width: 350px;
+
+  border-radius: 10px 0px 0px 10px;
+  background: white;
+  border-color: #418bca;
+  border-width: 0.125ch;
+}
+.searchButton{
+  padding: 5px 10px 5px 10px;
+  border-radius: 0px 10px 10px 0px;
+  background: white;
+  border-color: #418bca;
+  border-width: 0.125ch;
+}
 
 </style>
   

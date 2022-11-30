@@ -14,15 +14,16 @@ const Art = () => import('@/components/Art.vue')
 const Standort = () => import('@/components/Standort.vue')
 const Infos = () => import('@/components/Infos.vue')
 const Ort = () => import('@/components/Ort.vue')
+const Suche = () => import('@/components/Suche.vue')
 
 const routes = [
-    {
-        path: "/:catchAll(.*)",
-        redirect: {
-            name: '/'
-        },
-        component: Art,
-    },
+    // {
+    //     path: "/:catchAll(.*)",
+    //     redirect: {
+    //         name: '/'
+    //     },
+    //     component: Art,
+    // },
     {
         path: "/",
         component: AppLayoutUser,
@@ -89,6 +90,24 @@ const routes = [
                     title: `Die Mürwiker - Infos`,
                     middleware: "user",
                 }
+            },
+            {
+                name: "/suche/",
+                path: '/suche/',
+                component: Suche,
+                meta: {
+                    title: `Die Mürwiker - Suche`,
+                    middleware: "user",
+                }
+            },
+            {
+                name: "/suche/:infos",
+                path: '/suche/:infos',
+                component: Suche,
+                meta: {
+                    title: `Die Mürwiker - Suche`,
+                    middleware: "user",
+                }
             }
         ]
     },
@@ -110,12 +129,12 @@ const routes = [
             title: `Registrierung`
         }
     },
-    {
-        path: "/admin/:catchAll(.*)",
-        redirect: {
-            name: 'art'
-        },
-    },
+    // {
+    //     path: "/admin/:catchAll(.*)",
+    //     redirect: {
+    //         name: 'art'
+    //     },
+    // },
     {
         path: "/admin/",
         component: AppLayoutAdmin,

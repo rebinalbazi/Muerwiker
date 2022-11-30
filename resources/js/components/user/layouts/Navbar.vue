@@ -15,7 +15,7 @@
         <template #header>
           <va-sidebar-item :active="isRouteActive(item)">
             <div class="app-layout__sidebar-wrapper">
-              <va-sidebar-item-content>
+              <va-sidebar-item-content >
                 <va-sidebar-item-title>
                   {{ item.displayName }}
                 </va-sidebar-item-title>
@@ -71,14 +71,6 @@ function isRouteActiveAdmin(item) {
     min-width: 90px;
     text-align: center;
     font-size: 15px;
-
-    .va-sidebar-item {
-      .va-sidebar-item--active {
-        .Infos {
-          background-color: white;
-        }
-      }
-    }
   }
 }
 
