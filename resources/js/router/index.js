@@ -10,11 +10,11 @@ const Register = () => import('@/components/admin/Register.vue')
 const AppLayoutAdmin = () => import('@/components/admin/layouts/AppLayout.vue')
 const AppLayoutUser = () => import('@/components/user/layouts/AppLayout.vue')
 
-const Art = () => import('@/components/Art.vue')
-const Standort = () => import('@/components/Standort.vue')
-const Infos = () => import('@/components/Infos.vue')
-const Ort = () => import('@/components/Ort.vue')
-const Suche = () => import('@/components/Suche.vue')
+const Art = () => import('@/components/user/pages/Art.vue')
+const Standort = () => import('@/components/user/pages/Standort.vue')
+const Infos = () => import('@/components/user/pages/Infos.vue')
+const Ort = () => import('@/components/user/pages/Ort.vue')
+const Suche = () => import('@/components/user/pages/Suche.vue')
 
 const routes = [
     // {
