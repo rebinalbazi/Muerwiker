@@ -29,32 +29,32 @@ export default {
         }
     ] as INavigationRoute[],
     rootAdmin: {
-        name: '/admin',
-        displayName: 'Admin',
+        name: 'admin',
+        displayName: 'Ansprechpartner',
     },
     routesAdmin: [
         {
-            name: '/admin/ansprechpartner',
+            name: 'ansprechpartner',
             displayName: 'Ansprechpartner',
         },
         {
-            name: '/wohnen',
+            name: 'wohnen',
             displayName: 'Wohnen',
         },
         {
-            name: '/arbeit',
+            name: 'arbeit',
             displayName: 'Arbeit',
         },
         {
-            name: '/tagesstaette',
+            name: 'tagesstaette',
             displayName: 'Tagesstaette',
         },
         {
-            name: '/verwaltung',
+            name: 'verwaltung',
             displayName: 'Verwaltung',
         },
         {
-            name: '/sonstige',
+            name: 'sonstige',
             displayName: 'Sonstige',
         }
     ] as INavigationRoute[],

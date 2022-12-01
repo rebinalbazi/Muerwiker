@@ -158,7 +158,7 @@ const routes = [
             },
             {
                 name: "ansprechpartner",
-                path: '/admin',
+                path: '/admin/ansprechpartner',
                 component: Ansprechpartner,
                 meta: {
                     title: `Admin - Ansprechpartner`

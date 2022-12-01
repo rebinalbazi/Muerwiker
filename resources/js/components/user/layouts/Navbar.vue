@@ -27,7 +27,7 @@
     </template>
 
     <template #right>
-      <router-link :to="'/admin'" style="text-decoration: none; color: white">
+      <router-link :to="'/admin/ansprechpartner'" style="text-decoration: none; color: white">
         <div class="app-layout__sidebar-wrapper">
           <va-sidebar-item-content>
             <va-sidebar-item-title>Zum Admin</va-sidebar-item-title>
