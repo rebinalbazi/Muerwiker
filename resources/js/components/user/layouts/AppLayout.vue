@@ -16,9 +16,7 @@
   </script>
   
   <style lang="scss">
-  $mobileBreakPointPX: 640px;
-  $tabletBreakPointPX: 768px;
-  
+
   .app-layout {
     height: 100vh;
     display: flex;
@@ -32,11 +30,8 @@
       display: flex;
       height: calc(100vh - 4rem);
       flex: 1;
-  
-      @media screen and (max-width: $tabletBreakPointPX) {
-        height: calc(100vh - 6.5rem);
-      }
     }
+    
     &__page {
       flex-grow: 2;
       overflow-y: scroll;

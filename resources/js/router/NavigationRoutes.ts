@@ -17,7 +17,7 @@ export default {
         },
         {
             name: '/:art',
-            displayName: 'Ort / Bereich',
+            displayName: 'Stadt / Bereich',
         },
         {
             name: '/:art/:ort',
@@ -29,25 +29,33 @@ export default {
         }
     ] as INavigationRoute[],
     rootAdmin: {
-        name: 'admin',
+        name: '/admin',
         displayName: 'Admin',
     },
     routesAdmin: [
         {
-            name: 'art',
-            displayName: 'Art',
+            name: '/admin/ansprechpartner',
+            displayName: 'Ansprechpartner',
         },
         {
-            name: 'ort',
-            displayName: 'Ort',
+            name: '/wohnen',
+            displayName: 'Wohnen',
         },
         {
-            name: 'standort',
-            displayName: 'Standort',
+            name: '/arbeit',
+            displayName: 'Arbeit',
         },
         {
-            name: 'infos',
-            displayName: 'Infos',
+            name: '/tagesstaette',
+            displayName: 'Tagesstaette',
+        },
+        {
+            name: '/verwaltung',
+            displayName: 'Verwaltung',
+        },
+        {
+            name: '/sonstige',
+            displayName: 'Sonstige',
         }
     ] as INavigationRoute[],
 }

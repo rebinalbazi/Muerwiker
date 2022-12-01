@@ -10,10 +10,17 @@ const Register = () => import('@/components/admin/Register.vue')
 const AppLayoutAdmin = () => import('@/components/admin/layouts/AppLayout.vue')
 const AppLayoutUser = () => import('@/components/user/layouts/AppLayout.vue')
 
+const Ansprechpartner = () => import('@/components/admin/pages/Ansprechpartner.vue')
+const Wohnen = () => import('@/components/admin/pages/Wohnen.vue')
+const Arbeit = () => import('@/components/admin/pages/Arbeit.vue')
+const Tagesstaette = () => import('@/components/admin/pages/Tagesstaette.vue')
+const Verwaltung = () => import('@/components/admin/pages/Verwaltung.vue')
+const Sonstige = () => import('@/components/admin/pages/Sonstige.vue')
+
 const Art = () => import('@/components/user/pages/Art.vue')
+const Ort = () => import('@/components/user/pages/Ort.vue')
 const Standort = () => import('@/components/user/pages/Standort.vue')
 const Infos = () => import('@/components/user/pages/Infos.vue')
-const Ort = () => import('@/components/user/pages/Ort.vue')
 const Suche = () => import('@/components/user/pages/Suche.vue')
 
 const routes = [
@@ -117,7 +124,7 @@ const routes = [
         component: Login,
         meta: {
             middleware: "admin",
-            title: `Anmeldung`
+            title: `Admin - Anmeldung`
         }
     },
     {
@@ -126,7 +133,7 @@ const routes = [
         component: Register,
         meta: {
             middleware: "admin",
-            title: `Registrierung`
+            title: `Admin - Registrierung`
         }
     },
     // {
@@ -144,41 +151,57 @@ const routes = [
         children: [{
                 name: "admin",
                 path: '/admin/',
-                component: Art,
+                component: Ansprechpartner,
                 meta: {
                     title: `Admin`
                 }
             },
             {
-                name: "art",
+                name: "ansprechpartner",
                 path: '/admin',
-                component: Art,
+                component: Ansprechpartner,
                 meta: {
-                    title: `Art`
+                    title: `Admin - Ansprechpartner`
                 }
             },
             {
-                name: "ort",
-                path: '/admin/ort',
-                component: Ort,
+                name: "wohnen",
+                path: '/admin/wohnen',
+                component: Wohnen,
                 meta: {
-                    title: `Ort`
+                    title: `Admin - Wohnen`
                 }
             },
             {
-                name: "standort",
-                path: '/admin/:art/:standort',
-                component: Standort,
+                name: "arbeit",
+                path: '/admin/arbeit',
+                component: Arbeit,
                 meta: {
-                    title: `Standort`
+                    title: `Admin - Arbeit`
                 }
             },
             {
-                name: "infos",
-                path: '/admin/infos',
-                component: Infos,
+                name: "tagesstaette",
+                path: '/admin/tagesstaette',
+                component: Tagesstaette,
                 meta: {
-                    title: `Infos`
+                    title: `Admin - Tagesstaette`
+                }
+            },
+            {
+                name: "verwaltung",
+                path: '/admin/verwaltung',
+                component: Verwaltung,
+                meta: {
+                    title: `Admin - Verwaltung`
+                }
+            },
+            {
+                name: "sonstige",
+                path: '/admin/sonstige',
+                component: Sonstige,
+                meta: {
+                    title: `Admin - Sonstige`
                 }
             }
         ]

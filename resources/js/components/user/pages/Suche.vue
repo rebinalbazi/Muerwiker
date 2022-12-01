@@ -44,7 +44,6 @@
   </template>
   
   <script setup>
-  import BackButton from "./user/layouts/BackButton.vue";
   import axios from "axios";
   import { onMounted, ref, reactive } from "vue";
   import { useRoute } from "vue-router";
@@ -93,7 +92,6 @@
   <style lang="scss">
   .table {
     border-radius: 10px;
-    border-color: black;
     border-width: 0.25ch;
   }
   

@@ -27,7 +27,7 @@
     </template>
 
     <template #right>
-      <router-link :to="'admin'" style="text-decoration: none; color: white">
+      <router-link :to="'/admin'" style="text-decoration: none; color: white">
         <div class="app-layout__sidebar-wrapper">
           <va-sidebar-item-content>
             <va-sidebar-item-title>Zum Admin</va-sidebar-item-title>
@@ -49,17 +49,9 @@ function isRouteActive(item) {
   return item.name === useRoute().name;
 }
 
-function isRouteActiveAdmin(item) {
-  return item === useRoute().name;
-}
 </script>
 
 <style lang="scss">
-.va-navbar__item {
-  color: #698dd7;
-  font-size: 30px;
-  border-left: 0px;
-}
 
 .va-sidebar__item {
   text-decoration: none;
@@ -74,11 +66,4 @@ function isRouteActiveAdmin(item) {
   }
 }
 
-.app-navbar__actions {
-  padding-left: 50px;
-}
-
-.va-navbar__center {
-  pointer-events: none;
-}
 </style>

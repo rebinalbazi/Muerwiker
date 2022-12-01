@@ -1,11 +1,11 @@
 <template>
-  <va-sidebar color="#262824">
+  <va-sidebar color="#262824" style="width: 13rem">
     <va-accordion
       v-model="accordionValue"
       class="sidebar-accordion va-sidebar__menu__inner"
       multiply
     >
-      <!-- <va-collapse v-for="item in items" :key="item.title">
+      <va-collapse v-for="item in items" :key="item.title">
         <template #header>
           <va-sidebar-item :active="isRouteActive(item)" :to="item.name">
             <va-sidebar-item-content>
@@ -15,18 +15,20 @@
             </va-sidebar-item-content>
           </va-sidebar-item>
         </template>
-      </va-collapse> -->
+      </va-collapse>
     </va-accordion>
     <va-accordion
       v-model="accordionValue"
       class="sidebar-accordion va-sidebar__menu__inner__infoscreen"
       multiply
     >
-      <va-collapse >
+      <va-collapse>
         <template #header>
-          <va-sidebar-item :to="'/'" style="position: absolute; bottom: 0;">
+          <va-sidebar-item :to="'/'" style="position: absolute; bottom: 0">
             <va-sidebar-item-content>
-              <va-sidebar-item-title> Zum Anwender Bereich </va-sidebar-item-title>
+              <va-sidebar-item-title>
+                Zum Anwender Bereich
+              </va-sidebar-item-title>
             </va-sidebar-item-content>
           </va-sidebar-item>
         </template>
@@ -55,14 +57,11 @@ function isRouteActiveUser(item) {
 $mobileBreakPointPX: 640px;
 $tabletBreakPointPX: 768px;
 
-.va-sidebar__item {
-  text-decoration: none;
-  color: unset !important;
-  border-left: 0px;
-}
-
 .va-sidebar {
   &-item {
+    text-decoration: none;
+    color: unset !important;
+    border-left: 0px;
     &__icon {
       width: 1.5rem;
       height: 1.5rem;
