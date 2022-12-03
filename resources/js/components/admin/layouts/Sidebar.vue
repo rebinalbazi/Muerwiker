@@ -1,10 +1,5 @@
 <template>
-  <va-sidebar color="#262824" style="width: 13rem">
-    <va-accordion
-      v-model="accordionValue"
-      class="sidebar-accordion va-sidebar__menu__inner"
-      multiply
-    >
+  <va-sidebar color="#262824" style="width: 12rem">
       <va-collapse v-for="item in items" :key="item.title">
         <template #header>
           <va-sidebar-item :active="isRouteActive(item)" :to="item.name">
@@ -16,12 +11,6 @@
           </va-sidebar-item>
         </template>
       </va-collapse>
-    </va-accordion>
-    <va-accordion
-      v-model="accordionValue"
-      class="sidebar-accordion va-sidebar__menu__inner__infoscreen"
-      multiply
-    >
       <va-collapse>
         <template #header>
           <va-sidebar-item :to="'/'" style="position: absolute; bottom: 0">
@@ -33,7 +22,6 @@
           </va-sidebar-item>
         </template>
       </va-collapse>
-    </va-accordion>
   </va-sidebar>
 </template>
 

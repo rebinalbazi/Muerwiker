@@ -56,7 +56,7 @@
   
   const columns = reactive([
     {
-      title: "name",
+      title: "Name",
       key: "name",
       sorter: "default",
     },
@@ -92,6 +92,7 @@
   <style lang="scss">
   .table {
     border-radius: 10px;
+    border-color: black;
     border-width: 0.25ch;
   }
   

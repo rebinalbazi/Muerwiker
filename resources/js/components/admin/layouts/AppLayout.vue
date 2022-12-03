@@ -9,7 +9,7 @@
 
       <div class="app-layout__page">
         <div class="gutter">
-          <!-- <router-view /> -->
+          <router-view />
         </div>
       </div>
     </div>

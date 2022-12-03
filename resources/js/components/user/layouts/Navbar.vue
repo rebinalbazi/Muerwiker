@@ -13,7 +13,7 @@
     <template #center>
       <va-collapse v-for="item in items" :key="item.title">
         <template #header>
-          <va-sidebar-item :active="isRouteActive(item)">
+          <va-sidebar-item style=" pointer-events: none;" :active="isRouteActive(item)">
             <div class="app-layout__sidebar-wrapper">
               <va-sidebar-item-content >
                 <va-sidebar-item-title>

@@ -36,7 +36,7 @@ class AnsprechpartnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ansprechpartner = Ansprechpartner::create($request -> post());
     }
 
     /**
@@ -68,7 +68,7 @@ class AnsprechpartnerController extends Controller
      * @param  \App\Models\Ansprechpartner  $ansprechpartner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ansprechpartner $ansprechpartner)
+    public function update(Request $request, $id)
     {
         //
     }

@@ -16,8 +16,7 @@
     </div>
   
     <div class="row" v-if="route.params.art == 'tagesstaette'">
-      <div class="col-md-3"></div>
-      <div class="col-md-3" style="padding: 12px" v-for="ort in orte" :key="ort.id">
+      <div class="col col-lg-3" style="padding: 12px" v-for="ort in orte" :key="ort.id">
         <router-link style="text-decoration: none" :to="`/${route.params.art}/${ort.id}`">
           <n-list hoverable bordered>
             <n-list-item style="padding: 12px">
@@ -29,7 +28,6 @@
           <strong>{{ ort.name }}</strong>
         </h1>
       </div>
-      <div class="col-md-3"></div>
     </div>
   
     <div class="row" v-if="route.params.art == 'verwaltung' || route.params.art == 'sonstige'">
