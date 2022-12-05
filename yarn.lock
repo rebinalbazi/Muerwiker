@@ -1611,6 +1611,11 @@
     "de-indent" "^1.0.2"
     "he" "^1.2.0"
 
+"vue-toastification@^2.0.0-rc.5":
+  "integrity" "sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA=="
+  "resolved" "https://registry.npmjs.org/vue-toastification/-/vue-toastification-2.0.0-rc.5.tgz"
+  "version" "2.0.0-rc.5"
+
 "vue-tweet@^2.0.2":
   "integrity" "sha512-a1tmxnOcL8MrBJBiCzoFw8njpaoVWc0pkuaBnEBKs7kdmr5qKjHlSMhjoukPPSLENPjPnRjrJnKEcu0D8+bXNw=="
   "resolved" "https://registry.npmjs.org/vue-tweet/-/vue-tweet-2.0.2.tgz"

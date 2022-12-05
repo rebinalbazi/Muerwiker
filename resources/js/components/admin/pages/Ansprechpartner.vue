@@ -1,12 +1,15 @@
 <template>
-  <button class="addButton" @click="showModalCreate = true">
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"
-      style="width: 25px"
-    />
-  </button>
   <div class="row">
     <va-card class="table">
+      <div class="table-header">
+        <h4 style="display: inline-block">Ansprechpartner</h4>
+        <button class="addButton" @click="showModalCreate = true">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"
+            style="width: 25px"
+          />
+        </button>
+      </div>
       <va-card-content style="padding: 0px">
         <n-data-table
           :bordered="true"
@@ -29,15 +32,15 @@
     <div>
       <n-form ref="formRef" label-placement="top">
         <n-grid :span="24" :x-gap="24">
-          <n-form-item-gi :span="24" label="Name" path="nameValueCreate">
+          <n-form-item-gi :span="24" label="Name*" path="nameValueCreate">
             <n-input v-model:value="nameValueCreate" placeholder="Name" />
           </n-form-item-gi>
 
-          <n-form-item-gi :span="24" label="Telefon" path="telefonValueCreate">
+          <n-form-item-gi :span="24" label="Telefon*" path="telefonValueCreate">
             <n-input v-model:value="telefonValueCreate" placeholder="Telefon" />
           </n-form-item-gi>
 
-          <n-form-item-gi :span="24" label="Email" path="emailValueCreate">
+          <n-form-item-gi :span="24" label="Email*" path="emailValueCreate">
             <n-input v-model:value="emailValueCreate" placeholder="Email" />
           </n-form-item-gi>
 
@@ -57,7 +60,15 @@
               <n-button type="info" @click="createSubmitButton()">
                 Erstellen
               </n-button>
+              <n-button
+                type="error"
+                @click="cancelResetButton()"
+                style="margin-left: 5px"
+              >
+                Abbrechen
+              </n-button>
             </div>
+            <small>*Pflichtfelder</small>
           </n-gi>
         </n-grid>
       </n-form>
@@ -75,15 +86,15 @@
     <div>
       <n-form ref="formRef" label-placement="top">
         <n-grid :span="24" :x-gap="24">
-          <n-form-item-gi :span="24" label="Name" path="nameValueEdit">
+          <n-form-item-gi :span="24" label="Name*" path="nameValueEdit">
             <n-input v-model:value="nameValueEdit" placeholder="Name" />
           </n-form-item-gi>
 
-          <n-form-item-gi :span="24" label="Telefon" path="telefonValueEdit">
+          <n-form-item-gi :span="24" label="Telefon*" path="telefonValueEdit">
             <n-input v-model:value="telefonValueEdit" placeholder="Telefon" />
           </n-form-item-gi>
 
-          <n-form-item-gi :span="24" label="Email" path="emailValueEdit">
+          <n-form-item-gi :span="24" label="Email*" path="emailValueEdit">
             <n-input v-model:value="emailValueEdit" placeholder="Email" />
           </n-form-item-gi>
 
@@ -99,12 +110,36 @@
               <n-button type="info" @click="editSubmitButton()">
                 Bestätigen
               </n-button>
+              <n-button
+                type="error"
+                @click="showModalEdit = false"
+                style="margin-left: 5px"
+              >
+                Abbrechen
+              </n-button>
             </div>
+            <small>*Pflichtfelder</small>
           </n-gi>
         </n-grid>
-        {{ ansprechpartnerEdit }}
       </n-form>
     </div>
+  </n-modal>
+  <n-modal
+    v-model:show="showModalDelete"
+    preset="dialog"
+    title="Ansprechperson löschen"
+  >
+    <div style="padding-bottom: 12.5px">
+      Bist du dir sicher, dass du diesen Ansprechpartner löschen möchtest?
+    </div>
+    <n-button type="info" @click="deleteSubmitButtton()"> Bestätigen </n-button>
+    <n-button
+      type="error"
+      @click="showModalDelete = false"
+      style="margin-left: 5px"
+    >
+      Abbrechen
+    </n-button>
   </n-modal>
 </template>
 
@@ -112,10 +147,14 @@
 import axios from "axios";
 import { onMounted, ref, reactive, h } from "vue";
 import { NButton } from "naive-ui";
+import { useToast } from "vue-toastification";
+
+const toast = useToast();
 
 let ansprechpartnerData = ref([]);
 let showModalCreate = ref(false);
 let showModalEdit = ref(false);
+let showModalDelete = ref(false);
 
 let nameValueCreate = ref(null);
 let telefonValueCreate = ref(null);
@@ -142,6 +181,8 @@ let ansprechpartnerEdit = ref({
   email: emailValueEdit,
   imagePath: imagePathValueEdit,
 });
+
+let deleteId = ref(null);
 
 const pagination = ref({
   pageSize: 10,
@@ -188,7 +229,7 @@ const columns = reactive([
         NButton,
         {
           size: "small",
-          onClick: () => console.log(row),
+          onClick: () => deleteButton(row),
         },
         { default: () => "Löschen" }
       );
@@ -196,20 +237,100 @@ const columns = reactive([
   },
 ]);
 
-onMounted(() => {
+const getData = () => {
   axios.get("/api/ansprechpartner").then((response) => {
     ansprechpartnerData.value = response.data;
   });
+};
+
+onMounted(() => {
+  getData();
 });
 
 const createSubmitButton = () => {
-  axios.post("/api/ansprechpartner", ansprechpartnerCreate.value);
-  window.location.reload();
+  if (
+    ansprechpartnerCreate.value.name !== null &&
+    ansprechpartnerCreate.value.name !== "" &&
+    ansprechpartnerCreate.value.telefon !== null &&
+    ansprechpartnerCreate.value.telefon !== "" &&
+    ansprechpartnerCreate.value.email !== null &&
+    ansprechpartnerCreate.value.email !== ""
+  ) {
+    if (
+      ansprechpartnerCreate.value.imagePath === null ||
+      ansprechpartnerCreate.value.imagePath === ""
+    ) {
+      ansprechpartnerCreate.value.imagePath =
+        "https://cdn-icons-png.flaticon.com/512/666/666201.png";
+      axios.post("/api/ansprechpartner", ansprechpartnerCreate.value);
+      getData();
+      cancelResetButton();
+      toast.success("Ansprechpartner wurde erstellt.", {
+        timeout: 3000,
+      });
+    } else {
+      axios.post("/api/ansprechpartner", ansprechpartnerCreate.value);
+      getData();
+      cancelResetButton();
+      toast.success("Ansprechpartner wurde erstellt.", {
+        timeout: 3000,
+      });
+    }
+  } else {
+    toast.error("Bitte alle Pflichtfelder aufüllen.", {
+      timeout: 3000,
+    });
+  }
+};
+
+const cancelResetButton = () => {
+  nameValueCreate.value = null;
+  telefonValueCreate.value = null;
+  emailValueCreate.value = null;
+  imagePathValueCreate.value = null;
+  showModalCreate.value = false;
 };
 
 const editSubmitButton = () => {
-  axios.put("/api/ansprechpartner/", ansprechpartnerEdit.value);
-  //window.location.reload();
+  if (
+    ansprechpartnerEdit.value.name !== null &&
+    ansprechpartnerEdit.value.name !== "" &&
+    ansprechpartnerEdit.value.telefon !== null &&
+    ansprechpartnerEdit.value.telefon !== "" &&
+    ansprechpartnerEdit.value.email !== null &&
+    ansprechpartnerEdit.value.email !== ""
+  ) {
+    if (
+      ansprechpartnerEdit.value.imagePath === null ||
+      ansprechpartnerEdit.value.imagePath === ""
+    ) {
+      ansprechpartnerCreate.value.imagePath =
+        "https://cdn-icons-png.flaticon.com/512/666/666201.png";
+      axios.put(
+        `/api/ansprechpartner/${ansprechpartnerEdit.value.id}`,
+        ansprechpartnerEdit.value
+      );
+      getData();
+      showModalEdit.value = false;
+      toast.success("Gespeichert.", {
+        timeout: 3000,
+      });
+    } else {
+      axios.put(
+        `/api/ansprechpartner/${ansprechpartnerEdit.value.id}`,
+        ansprechpartnerEdit.value
+      );
+      getData();
+      showModalEdit.value = false;
+      toast.success("Gespeichert.", {
+        timeout: 3000,
+      });
+    }
+  } else {
+    toast.error("Bitte alle Pflichtfelder aufüllen.", {
+      timeout: 3000,
+    });
+  }
 };
 
 const editButton = (row) => {
@@ -220,13 +341,35 @@ const editButton = (row) => {
   imagePathValueEdit.value = row.imagePath;
   showModalEdit.value = true;
 };
+
+const deleteButton = (row) => {
+  deleteId.value = row.id;
+  showModalDelete.value = true;
+};
+
+const deleteSubmitButtton = (id) => {
+  id = deleteId.value;
+  axios.delete(`/api/ansprechpartner/${id}`);
+  getData();
+  showModalDelete.value = false;
+  toast.success("Ansprechpartner wurde gelöscht.", {
+    timeout: 3000,
+  });
+};
 </script>
 
 <style lang="scss">
 .addButton {
   background: none;
   border-width: 0px;
-  padding-bottom: 15px;
-  margin-left: -10px;
+  border-bottom: 0px;
+  float: right;
+}
+.n-base-icon {
+  height: 1.25em;
+}
+
+.table-header {
+  padding: 10px 20px 0px 0px;
 }
 </style>

@@ -19,16 +19,6 @@ class AnsprechpartnerController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -47,18 +37,7 @@ class AnsprechpartnerController extends Controller
      */
     public function show(Ansprechpartner $ansprechpartner)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Ansprechpartner  $ansprechpartner
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Ansprechpartner $ansprechpartner)
-    {
-        //
+        return response()->json($ansprechpartner);
     }
 
     /**
@@ -68,9 +47,9 @@ class AnsprechpartnerController extends Controller
      * @param  \App\Models\Ansprechpartner  $ansprechpartner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Ansprechpartner $ansprechpartner)
     {
-        //
+        $ansprechpartner->fill($request->post())->save();
     }
 
     /**
@@ -81,6 +60,6 @@ class AnsprechpartnerController extends Controller
      */
     public function destroy(Ansprechpartner $ansprechpartner)
     {
-        //
+        $ansprechpartner->delete();
     }
 }
