@@ -19,16 +19,6 @@ class SonstigeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,7 +26,7 @@ class SonstigeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sonstige = Sonstige::create($request -> post());
     }
 
     /**
@@ -47,18 +37,7 @@ class SonstigeController extends Controller
      */
     public function show(Sonstige $sonstige)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Sonstige  $sonstige
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Sonstige $sonstige)
-    {
-        //
+        return response()->json($sonstige);
     }
 
     /**
@@ -70,7 +49,7 @@ class SonstigeController extends Controller
      */
     public function update(Request $request, Sonstige $sonstige)
     {
-        //
+        $sonstige->fill($request->post())->save();
     }
 
     /**
@@ -81,6 +60,6 @@ class SonstigeController extends Controller
      */
     public function destroy(Sonstige $sonstige)
     {
-        //
+        $sonstige->delete();
     }
 }

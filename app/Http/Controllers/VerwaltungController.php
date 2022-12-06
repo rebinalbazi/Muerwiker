@@ -19,16 +19,6 @@ class VerwaltungController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,7 +26,7 @@ class VerwaltungController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $verwaltung = Verwaltung::create($request -> post());
     }
 
     /**
@@ -47,18 +37,7 @@ class VerwaltungController extends Controller
      */
     public function show(Verwaltung $verwaltung)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Verwaltung  $verwaltung
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Verwaltung $verwaltung)
-    {
-        //
+        return response()->json($verwaltung);
     }
 
     /**
@@ -70,7 +49,7 @@ class VerwaltungController extends Controller
      */
     public function update(Request $request, Verwaltung $verwaltung)
     {
-        //
+        $verwaltung->fill($request->post())->save();
     }
 
     /**
@@ -81,6 +60,6 @@ class VerwaltungController extends Controller
      */
     public function destroy(Verwaltung $verwaltung)
     {
-        //
+        $verwaltung->delete();
     }
 }

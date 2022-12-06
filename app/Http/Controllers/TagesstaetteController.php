@@ -19,16 +19,6 @@ class TagesstaetteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,7 +26,7 @@ class TagesstaetteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tagesstaette = Tagesstaette::create($request -> post());
     }
 
     /**
@@ -47,18 +37,7 @@ class TagesstaetteController extends Controller
      */
     public function show(Tagesstaette $tagesstaette)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Tagesstaette  $tagesstaette
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Tagesstaette $tagesstaette)
-    {
-        //
+        return response()->json($tagesstaette);
     }
 
     /**
@@ -70,7 +49,7 @@ class TagesstaetteController extends Controller
      */
     public function update(Request $request, Tagesstaette $tagesstaette)
     {
-        //
+        $tagesstaette->fill($request->post())->save();
     }
 
     /**
@@ -81,6 +60,6 @@ class TagesstaetteController extends Controller
      */
     public function destroy(Tagesstaette $tagesstaette)
     {
-        //
+        $tagesstaette->delete();
     }
 }

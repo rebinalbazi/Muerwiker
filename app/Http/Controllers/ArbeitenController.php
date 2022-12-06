@@ -19,16 +19,6 @@ class ArbeitenController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -36,7 +26,7 @@ class ArbeitenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $arbeiten = Arbeiten::create($request -> post());
     }
 
     /**
@@ -47,18 +37,7 @@ class ArbeitenController extends Controller
      */
     public function show(Arbeiten $arbeiten)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Arbeiten  $arbeiten
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Arbeiten $arbeiten)
-    {
-        //
+        return response()->json($arbeiten);
     }
 
     /**
@@ -70,7 +49,7 @@ class ArbeitenController extends Controller
      */
     public function update(Request $request, Arbeiten $arbeiten)
     {
-        //
+        $arbeiten->fill($request->post())->save();
     }
 
     /**
@@ -81,6 +60,6 @@ class ArbeitenController extends Controller
      */
     public function destroy(Arbeiten $arbeiten)
     {
-        //
+        $arbeiten->delete();
     }
 }
