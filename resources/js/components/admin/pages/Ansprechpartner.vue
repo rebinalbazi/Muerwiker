@@ -238,15 +238,15 @@ const columns = reactive([
   },
 ]);
 
+onMounted(() => {
+  getData();
+});
+
 const getData = () => {
   axios.get("/api/ansprechpartner").then((response) => {
     ansprechpartnerData.value = response.data;
   });
 };
-
-onMounted(() => {
-  getData();
-});
 
 const createSubmitButton = () => {
   if (
@@ -292,6 +292,15 @@ const cancelResetButton = () => {
   showModalCreate.value = false;
 };
 
+const editButton = (row) => {
+  idValueEdit.value = row.id;
+  nameValueEdit.value = row.name;
+  telefonValueEdit.value = row.telefon;
+  emailValueEdit.value = row.email;
+  imagePathValueEdit.value = row.imagePath;
+  showModalEdit.value = true;
+};
+
 const editSubmitButton = () => {
   if (
     ansprechpartnerEdit.value.name !== null &&
@@ -332,15 +341,6 @@ const editSubmitButton = () => {
       timeout: 3000,
     });
   }
-};
-
-const editButton = (row) => {
-  idValueEdit.value = row.id;
-  nameValueEdit.value = row.name;
-  telefonValueEdit.value = row.telefon;
-  emailValueEdit.value = row.email;
-  imagePathValueEdit.value = row.imagePath;
-  showModalEdit.value = true;
 };
 
 const deleteButton = (row) => {

@@ -14,7 +14,7 @@
         <n-data-table
           :bordered="true"
           :columns="columns"
-          :data="wohnenDataMerged"
+          :data="wohnenData"
           :pagination="pagination"
         />
       </va-card-content>
@@ -28,6 +28,7 @@
   >
     <template #header>
       <div>Wohnort hinzufügen</div>
+      {{ { a1ValueCreate, a2ValueCreate } }}
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -62,21 +63,30 @@
           >
             <n-select
               v-model:value="a1ValueCreate"
-              :options="optionsAnsprechpartner"
+              :options="
+                optionsAnsprechpartner.filter((a) => {
+                  return a.value !== a2ValueCreate;
+                })
+              "
+              clearable
               placeholder="Ansprechparner 1"
               filterable
             />
           </n-form-item-gi>
 
           <n-form-item-gi
-            v-if="a1ValueCreate !== null"
             :span="24"
             label="Ansprechparner 2"
             path="a2ValueCreate"
           >
             <n-select
               v-model:value="a2ValueCreate"
-              :options="optionsAnsprechpartner"
+              :options="
+                optionsAnsprechpartner.filter((a) => {
+                  return a.value !== a1ValueCreate;
+                })
+              "
+              clearable
               placeholder="Ansprechparner 2"
               filterable
             />
@@ -156,7 +166,12 @@
           >
             <n-select
               v-model:value="a1ValueEdit"
-              :options="optionsAnsprechpartner"
+              :options="
+                optionsAnsprechpartner.filter((a) => {
+                  return a.value !== a2ValueEdit;
+                })
+              "
+              clearable
               placeholder="Ansprechparner 1"
               filterable
             />
@@ -169,7 +184,12 @@
           >
             <n-select
               v-model:value="a2ValueEdit"
-              :options="optionsAnsprechpartner"
+              :options="
+                optionsAnsprechpartner.filter((a) => {
+                  return a.value !== a1ValueEdit;
+                })
+              "
+              clearable
               placeholder="Ansprechparner 2"
               filterable
             />
@@ -223,7 +243,7 @@
   
   <script setup>
 import axios from "axios";
-import { onMounted, ref, reactive, h } from "vue";
+import { onMounted, ref, reactive, h, watch } from "vue";
 import { NButton } from "naive-ui";
 import { useToast } from "vue-toastification";
 
@@ -246,7 +266,7 @@ let wohnenCreate = ref({
   notfallnummer: emailValueCreate,
   imagePath: imagePathValueCreate,
   ansprechpartner1_id: a1ValueCreate,
-  ansprechpartner2_id: a2ValueCreate,
+  ansprechpartner2_id: a1ValueCreate !== null ? a2ValueCreate: null,
 });
 
 let idValueEdit = ref(null);
@@ -351,75 +371,58 @@ let wohnenData = ref([]);
 let ansprechpartnerData = ref([]);
 let wohnenDataMerged = ref([]);
 
-axios.get("/api/wohnen").then((response) => {
-  wohnenData.value = response.data;
-});
-
-axios.get("/api/ansprechpartner").then((response) => {
-  ansprechpartnerData.value = response.data;
-  wohnenData.value.forEach((element) => {
-    ansprechpartnerData.value.forEach((a) => {
-      if (element.ansprechpartner1_id === a.id) {
-        wohnenDataMerged.value = [
-          ...wohnenDataMerged.value,
-          Object.assign(element, { ansprechpartner1_name: a.name }),
-        ];
-      }
-      if (element.ansprechpartner1_id === null) {
-        wohnenDataMerged.value = [
-          ...wohnenDataMerged.value,
-          Object.assign(element, { ansprechpartner1_name: null }),
-        ];
-      }
-      if (element.ansprechpartner2_id === a.id) {
-        wohnenDataMerged.value = [
-          ...wohnenDataMerged.value,
-          Object.assign(element, { ansprechpartner2_name: a.name }),
-        ];
-      }
-      if (element.ansprechpartner2_id === null) {
-        wohnenDataMerged.value = [
-          ...wohnenDataMerged.value,
-          Object.assign(element, { ansprechpartner2_name: null }),
-        ];
-      }
-      wohnenDataMerged.value = wohnenDataMerged.value.filter(
-        (w, index) =>
-          index ===
-          wohnenDataMerged.value.findIndex(
-            (o) =>
-              w.ort === o.ort &&
-              w.strasse === o.strasse &&
-              w.imagePath === o.imagePath &&
-              w.notfallnummer === o.notfallnummer &&
-              w.ansprechpartner1_id === o.ansprechpartner1_id &&
-              w.ansprechpartner2_id === o.ansprechpartner2_id
-          )
-      );
-      optionsAnsprechpartner.value = [
-        ...optionsAnsprechpartner.value,
-        Object.assign({ label: a.name, value: a.id }),
-      ];
-      optionsAnsprechpartner.value = optionsAnsprechpartner.value.filter(
-        (a, index) =>
-          index ===
-          optionsAnsprechpartner.value.findIndex(
-            (o) => a.label === o.label && a.value === o.value
-          )
-      );
-    });
-  });
+onMounted(() => {
+  getData();
 });
 
 const getData = () => {
   axios.get("/api/wohnen").then((response) => {
     wohnenData.value = response.data;
   });
-};
 
-onMounted(() => {
-  getData();
-});
+  axios.get("/api/ansprechpartner").then((response) => {
+    ansprechpartnerData.value = response.data;
+    wohnenData.value.forEach((element) => {
+      ansprechpartnerData.value.forEach((a) => {
+        if (element.ansprechpartner1_id === a.id) {
+          wohnenDataMerged.value = [
+            ...wohnenDataMerged.value,
+            Object.assign(element, { ansprechpartner1_name: a.name }),
+          ];
+        }
+        if (element.ansprechpartner1_id === null) {
+          wohnenDataMerged.value = [
+            ...wohnenDataMerged.value,
+            Object.assign(element, { ansprechpartner1_name: null }),
+          ];
+        }
+        if (element.ansprechpartner2_id === a.id) {
+          wohnenDataMerged.value = [
+            ...wohnenDataMerged.value,
+            Object.assign(element, { ansprechpartner2_name: a.name }),
+          ];
+        }
+        if (element.ansprechpartner2_id === null) {
+          wohnenDataMerged.value = [
+            ...wohnenDataMerged.value,
+            Object.assign(element, { ansprechpartner2_name: null }),
+          ];
+        }
+        optionsAnsprechpartner.value = [
+          ...optionsAnsprechpartner.value,
+          Object.assign({ label: a.name, value: a.id }),
+        ];
+        optionsAnsprechpartner.value = optionsAnsprechpartner.value.filter(
+          (a, index) =>
+            index ===
+            optionsAnsprechpartner.value.findIndex(
+              (o) => a.label === o.label && a.value === o.value
+            )
+        );
+      });
+    });
+  });
+};
 
 const createSubmitButton = () => {
   if (
@@ -467,6 +470,17 @@ const cancelResetButton = () => {
   showModalCreate.value = false;
 };
 
+const editButton = (row) => {
+  idValueEdit.value = row.id;
+  ortValueEdit.value = row.ort;
+  strasseValueEdit.value = row.strasse;
+  notfallnummerValueEdit.value = row.notfallnummer;
+  imagePathValueEdit.value = row.imagePath;
+  a1ValueEdit.value = row.ansprechpartner1_id;
+  a2ValueEdit.value = row.ansprechpartner2_id;
+  showModalEdit.value = true;
+};
+
 const editSubmitButton = () => {
   if (
     wohnenEdit.value.ort !== null &&
@@ -501,17 +515,6 @@ const editSubmitButton = () => {
       timeout: 3000,
     });
   }
-};
-
-const editButton = (row) => {
-  idValueEdit.value = row.id;
-  ortValueEdit.value = row.ort;
-  strasseValueEdit.value = row.strasse;
-  notfallnummerValueEdit.value = row.notfallnummer;
-  imagePathValueEdit.value = row.imagePath;
-  a1ValueEdit.value = row.ansprechpartner1_id;
-  a2ValueEdit.value = row.ansprechpartner2_id;
-  showModalEdit.value = true;
 };
 
 const deleteButton = (row) => {
