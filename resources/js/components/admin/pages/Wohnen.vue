@@ -22,6 +22,7 @@
   </div>
   <n-modal
     class="createModal"
+    v-bind:on-after-leave="cancelResetButton"
     v-model:show="showModalCreate"
     preset="card"
     style="margin: 0% 13% 3% 13%"
@@ -265,7 +266,7 @@ let wohnenCreate = ref({
   notfallnummer: emailValueCreate,
   imagePath: imagePathValueCreate,
   ansprechpartner1_id: a1ValueCreate,
-  ansprechpartner2_id: a1ValueCreate !== null ? a2ValueCreate: null,
+  ansprechpartner2_id: a1ValueCreate !== null ? a2ValueCreate : null,
 });
 
 let idValueEdit = ref(null);
@@ -333,7 +334,13 @@ const columns = reactive([
           size: "small",
           onClick: () => editButton(row),
         },
-        { default: () => "Bearbeiten" }
+        {
+          default: () =>
+            h("img", {
+              width: "20",
+              src: "https://cdn-icons-png.flaticon.com/512/2985/2985043.png",
+            }),
+        }
       );
     },
   },
@@ -347,7 +354,13 @@ const columns = reactive([
           size: "small",
           onClick: () => deleteButton(row),
         },
-        { default: () => "Löschen" }
+        {
+          default: () =>
+            h("img", {
+              width: "17.5",
+              src: "https://cdn-icons-png.flaticon.com/512/1214/1214428.png",
+            }),
+        }
       );
     },
   },
