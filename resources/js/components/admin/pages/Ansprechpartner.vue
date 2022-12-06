@@ -21,10 +21,10 @@
     </va-card>
   </div>
   <n-modal
-    class="editModal"
+    class="createModal"
     v-model:show="showModalCreate"
     preset="card"
-    style="margin: 0% 13% 16% 13%"
+    style="margin: 0% 13% 3% 13%"
   >
     <template #header>
       <div>Ansprechperson hinzufügen</div>
@@ -75,10 +75,10 @@
     </div>
   </n-modal>
   <n-modal
-    class="createModal"
+    class="editModal"
     v-model:show="showModalEdit"
     preset="card"
-    style="margin: 0% 13% 16% 13%"
+    style="margin: 0% 13% 3% 13%"
   >
     <template #header>
       <div>Ansprechperson bearbeiten</div>
@@ -125,6 +125,7 @@
     </div>
   </n-modal>
   <n-modal
+    class="deleteModal"
     v-model:show="showModalDelete"
     preset="dialog"
     title="Ansprechperson löschen"
@@ -277,7 +278,7 @@ const createSubmitButton = () => {
       });
     }
   } else {
-    toast.error("Bitte alle Pflichtfelder aufüllen.", {
+    toast.error("Bitte alle Pflichtfelder ausfüllen.", {
       timeout: 3000,
     });
   }
@@ -327,7 +328,7 @@ const editSubmitButton = () => {
       });
     }
   } else {
-    toast.error("Bitte alle Pflichtfelder aufüllen.", {
+    toast.error("Bitte alle Pflichtfelder ausfüllen.", {
       timeout: 3000,
     });
   }
@@ -370,6 +371,6 @@ const deleteSubmitButtton = (id) => {
 }
 
 .table-header {
-  padding: 10px 20px 0px 0px;
+  padding: 10px 10px 0px 0px;
 }
 </style>

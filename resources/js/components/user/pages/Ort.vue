@@ -2,7 +2,7 @@
     <backButton />
     <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'">
       <div class="col col-lg-3" style="padding: 12px;" v-for="ort in orte" :key="ort.id">
-        <router-link style="text-decoration: none" :to="`/${route.params.art}/${ort.urlName}`">
+        <router-link style="text-decoration: none" :to="`/${route.params.art}/${ort.name}`">
           <n-list hoverable bordered>
             <n-list-item style="padding: 12px">
               <img v-bind:src="ort.iconPath" style="max-width: 100%" />
@@ -60,14 +60,12 @@
         id: "1",
         name: "Flensburg",
         iconPath:
-          "https://i.postimg.cc/MKK7ps5y/csm-2010-05-21-1192-1-71acf82654-Cropped-1.jpg",
-        urlName: "flensburg"
+          "https://i.postimg.cc/MKK7ps5y/csm-2010-05-21-1192-1-71acf82654-Cropped-1.jpg"
       },
       {
         id: "2",
         name: "Niebüll",
-        iconPath: "https://i.postimg.cc/k4m83wDR/2435-210-1-g-Cropped.jpg",
-        urlName: "niebuell"
+        iconPath: "https://i.postimg.cc/k4m83wDR/2435-210-1-g-Cropped.jpg"
       }
     ];
   

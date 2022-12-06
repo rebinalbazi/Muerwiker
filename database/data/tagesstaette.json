@@ -1,13 +1,13 @@
 [{
     "id": 1,
-    "ort": "flensburg",
+    "ort": "Flensburg",
     "notfallnummer": "0160-91755716",
     "ansprechpartner1_id": 25,
     "ansprechpartner2_id": null
 },
 {
     "id": 2,
-    "ort": "niebuell",
+    "ort": "Niebuell",
     "notfallnummer": "0176-11119223",
     "ansprechpartner1_id": 9,
     "ansprechpartner2_id": 10

@@ -39,7 +39,7 @@ export default {
         },
         {
             name: 'wohnen',
-            displayName: 'Wohnen',
+            displayName: 'Wohnort',
         },
         {
             name: 'arbeit',
@@ -47,7 +47,7 @@ export default {
         },
         {
             name: 'tagesstaette',
-            displayName: 'Tagesstaette',
+            displayName: 'Tagesstätte',
         },
         {
             name: 'verwaltung',

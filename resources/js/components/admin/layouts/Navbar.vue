@@ -53,7 +53,7 @@ export default {
     async logout() {
       await axios.post("/logout").then(({ data }) => {
         this.signOut();
-        this.$router.push({ name: "login" });
+        this.$router.push({ name: "/" });
       });
     },
   },

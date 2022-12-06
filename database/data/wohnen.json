@@ -1,5 +1,5 @@
 [{
-        "ort": "flensburg",
+        "ort": "Flensburg",
         "strasse": "Terassenstraße",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0160-98554890",
@@ -7,7 +7,7 @@
         "ansprechpartner2_id": 2
     },
     {
-        "ort": "flensburg",
+        "ort": "Flensburg",
         "strasse": "Treeneweg",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0160-98554890",
@@ -15,7 +15,7 @@
         "ansprechpartner2_id": 2
     },
     {
-        "ort": "flensburg",
+        "ort": "Flensburg",
         "strasse": "Mürwiker Str",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0160-98554890",
@@ -23,7 +23,7 @@
         "ansprechpartner2_id": 4
     },
     {
-        "ort": "flensburg",
+        "ort": "Flensburg",
         "strasse": "Moltkestraße",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0160-98554890",
@@ -31,7 +31,7 @@
         "ansprechpartner2_id": 4
     },
     {
-        "ort": "flensburg",
+        "ort": "Flensburg",
         "strasse": "ABW",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0176-11119319",
@@ -39,7 +39,7 @@
         "ansprechpartner2_id": 6
     },
     {
-        "ort": "flensburg",
+        "ort": "Flensburg",
         "strasse": "Rabenholz",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0176-11119319",
@@ -47,7 +47,7 @@
         "ansprechpartner2_id": 6
     },
     {
-        "ort": "flensburg",
+        "ort": "Flensburg",
         "strasse": "Skolehaven",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0176-11119319",
@@ -55,7 +55,7 @@
         "ansprechpartner2_id": 8
     },
     {
-        "ort": "flensburg",
+        "ort": "Flensburg",
         "strasse": "Mittendrin",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0176-11119319",
@@ -63,7 +63,7 @@
         "ansprechpartner2_id": 8
     },
     {
-        "ort": "niebuell",
+        "ort": "Niebuell",
         "strasse": "Buchenweg",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0176-11119223",
@@ -71,7 +71,7 @@
         "ansprechpartner2_id": 10
     },
     {
-        "ort": "niebuell",
+        "ort": "Niebuell",
         "strasse": "Schreberweg",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0176-11119223",
@@ -79,7 +79,7 @@
         "ansprechpartner2_id": 12
     },
     {
-        "ort": "niebuell",
+        "ort": "Niebuell",
         "strasse": "Weberstraße",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0176-11119223",
@@ -87,7 +87,7 @@
         "ansprechpartner2_id": 10
     },
     {
-        "ort": "niebuell",
+        "ort": "Niebuell",
         "strasse": "Theodor-Storm-Straße",
         "imagePath": "https://cdn-icons-png.flaticon.com/512/1829/1829552.png",
         "notfallnummer": "0176-11119223",
