@@ -28,7 +28,6 @@
   >
     <template #header>
       <div>Wohnort hinzufügen</div>
-      {{ { a1ValueCreate, a2ValueCreate } }}
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
