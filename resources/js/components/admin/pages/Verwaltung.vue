@@ -28,7 +28,7 @@
     style="margin: 0% 13% 3% 13%"
   >
     <template #header>
-      <div>Verwaltung hinzufügen</div>
+      <div>Bereich hinzufügen</div>
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -51,7 +51,7 @@
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 1"
+            label="Ansprechpartner 1"
             path="a1ValueCreate"
           >
             <n-select
@@ -62,14 +62,14 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 1"
+              placeholder="Ansprechpartner 1"
               filterable
             />
           </n-form-item-gi>
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 2"
+            label="Ansprechpartner 2"
             path="a2ValueCreate"
           >
             <n-select
@@ -80,7 +80,7 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 2"
+              placeholder="Ansprechpartner 2"
               filterable
             />
           </n-form-item-gi>
@@ -122,7 +122,7 @@
     style="margin: 0% 13% 3% 13%"
   >
     <template #header>
-      <div>Verwaltung bearbeiten</div>
+      <div>Bereich bearbeiten</div>
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -145,7 +145,7 @@
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 1"
+            label="Ansprechpartner 1"
             path="a1ValueEdit"
           >
             <n-select
@@ -156,14 +156,14 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 1"
+              placeholder="Ansprechpartner 1"
               filterable
             />
           </n-form-item-gi>
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 2"
+            label="Ansprechpartner 2"
             path="a2ValueEdit"
           >
             <n-select
@@ -174,7 +174,7 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 2"
+              placeholder="Ansprechpartner 2"
               filterable
             />
           </n-form-item-gi>
@@ -209,10 +209,10 @@
     class="deleteModal"
     v-model:show="showModalDelete"
     preset="dialog"
-    title="Verwaltung löschen"
+    title="Bereich löschen"
   >
     <div style="padding-bottom: 12.5px">
-      Bist du dir sicher, dass du diesen Verwaltung löschen möchtest?
+      Bist du dir sicher, dass du diesen Bereich löschen möchtest?
     </div>
     <n-button type="info" @click="deleteSubmitButtton()"> Bestätigen </n-button>
     <n-button
@@ -415,14 +415,14 @@ const createSubmitButton = () => {
       axios.post("/api/verwaltung", verwaltungCreate.value);
       getData();
       cancelResetButton();
-      toast.success("Verwaltung wurde erstellt.", {
+      toast.success("Bereich wurde erstellt.", {
         timeout: 3000,
       });
     } else {
       axios.post("/api/verwaltung", verwaltungCreate.value);
       getData();
       cancelResetButton();
-      toast.success("Verwaltung wurde erstellt.", {
+      toast.success("Bereich wurde erstellt.", {
         timeout: 3000,
       });
     }
@@ -496,7 +496,7 @@ const deleteSubmitButtton = (id) => {
   axios.delete(`/api/verwaltung/${id}`);
   getData();
   showModalDelete.value = false;
-  toast.success("Verwaltung wurde gelöscht.", {
+  toast.success("Bereich wurde gelöscht.", {
     timeout: 3000,
   });
 };

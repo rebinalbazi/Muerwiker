@@ -2,7 +2,7 @@
   <div class="row">
     <va-card class="table">
       <div class="table-header">
-        <h4 style="display: inline-block">Arbeit</h4>
+        <h4 style="display: inline-block">Arbeitsort</h4>
         <button class="addButton" @click="showModalCreate = true">
           <img
             src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"
@@ -28,7 +28,7 @@
     style="margin: 0% 13% 3% 13%"
   >
     <template #header>
-      <div>Arbeit hinzufügen</div>
+      <div>Arbeitsort hinzufügen</div>
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -69,7 +69,7 @@
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 1"
+            label="Ansprechpartner 1"
             path="a1ValueCreate"
           >
             <n-select
@@ -80,14 +80,14 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 1"
+              placeholder="Ansprechpartner 1"
               filterable
             />
           </n-form-item-gi>
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 2"
+            label="Ansprechpartner 2"
             path="a2ValueCreate"
           >
             <n-select
@@ -98,7 +98,7 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 2"
+              placeholder="Ansprechpartner 2"
               filterable
             />
           </n-form-item-gi>
@@ -129,7 +129,7 @@
     style="margin: 0% 13% 3% 13%"
   >
     <template #header>
-      <div>Arbeit bearbeiten</div>
+      <div>Arbeitsort bearbeiten</div>
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -172,7 +172,7 @@
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 1"
+            label="Ansprechpartner 1"
             path="a1ValueEdit"
           >
             <n-select
@@ -183,14 +183,14 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 1"
+              placeholder="Ansprechpartner 1"
               filterable
             />
           </n-form-item-gi>
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 2"
+            label="Ansprechpartner 2"
             path="a2ValueEdit"
           >
             <n-select
@@ -201,7 +201,7 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 2"
+              placeholder="Ansprechpartner 2"
               filterable
             />
           </n-form-item-gi>
@@ -229,10 +229,10 @@
     class="deleteModal"
     v-model:show="showModalDelete"
     preset="dialog"
-    title="Arbeit löschen"
+    title="Arbeitsort löschen"
   >
     <div style="padding-bottom: 12.5px">
-      Bist du dir sicher, dass du diesen Arbeit löschen möchtest?
+      Bist du dir sicher, dass du diesen Arbeitsort löschen möchtest?
     </div>
     <n-button type="info" @click="deleteSubmitButtton()"> Bestätigen </n-button>
     <n-button
@@ -464,14 +464,14 @@ const createSubmitButton = () => {
       axios.post("/api/arbeiten", arbeitCreate.value);
       getData();
       cancelResetButton();
-      toast.success("Arbeit wurde erstellt.", {
+      toast.success("Arbeitsort wurde erstellt.", {
         timeout: 3000,
       });
     } else {
       axios.post("/api/arbeiten", arbeitCreate.value);
       getData();
       cancelResetButton();
-      toast.success("Arbeit wurde erstellt.", {
+      toast.success("Arbeitsort wurde erstellt.", {
         timeout: 3000,
       });
     }
@@ -549,7 +549,7 @@ const deleteSubmitButtton = (id) => {
   axios.delete(`/api/arbeiten/${id}`);
   getData();
   showModalDelete.value = false;
-  toast.success("Arbeit wurde gelöscht.", {
+  toast.success("Arbeitsort wurde gelöscht.", {
     timeout: 3000,
   });
 };

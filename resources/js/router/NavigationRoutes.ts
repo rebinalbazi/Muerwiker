@@ -35,7 +35,7 @@ export default {
     routesAdmin: [
         {
             name: 'ansprechpartner',
-            displayName: 'Ansprechpartner',
+            displayName: 'Mitarbeiter',
         },
         {
             name: 'wohnen',
@@ -43,7 +43,7 @@ export default {
         },
         {
             name: 'arbeit',
-            displayName: 'Arbeit',
+            displayName: 'Arbeitsort',
         },
         {
             name: 'tagesstaette',

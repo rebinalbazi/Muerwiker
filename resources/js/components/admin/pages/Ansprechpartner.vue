@@ -2,7 +2,7 @@
   <div class="row">
     <va-card class="table">
       <div class="table-header">
-        <h4 style="display: inline-block">Ansprechpartner</h4>
+        <h4 style="display: inline-block">Mitarbeiter</h4>
         <button class="addButton" @click="showModalCreate = true">
           <img
             src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"
@@ -28,7 +28,7 @@
     style="margin: 0% 13% 3% 13%"
   >
     <template #header>
-      <div>Ansprechperson hinzufügen</div>
+      <div>Mitarbeiter hinzufügen</div>
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -82,7 +82,7 @@
     style="margin: 0% 13% 3% 13%"
   >
     <template #header>
-      <div>Ansprechperson bearbeiten</div>
+      <div>Mitarbeiter bearbeiten</div>
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -129,10 +129,10 @@
     class="deleteModal"
     v-model:show="showModalDelete"
     preset="dialog"
-    title="Ansprechperson löschen"
+    title="Mitarbeiter löschen"
   >
     <div style="padding-bottom: 12.5px">
-      Bist du dir sicher, dass du diesen Ansprechpartner löschen möchtest?
+      Bist du dir sicher, dass du diesen Mitarbeiter löschen möchtest?
     </div>
     <n-button type="info" @click="deleteSubmitButtton()"> Bestätigen </n-button>
     <n-button
@@ -279,14 +279,14 @@ const createSubmitButton = () => {
       axios.post("/api/ansprechpartner", ansprechpartnerCreate.value);
       getData();
       cancelResetButton();
-      toast.success("Ansprechpartner wurde erstellt.", {
+      toast.success("Mitarbeiter wurde erstellt.", {
         timeout: 3000,
       });
     } else {
       axios.post("/api/ansprechpartner", ansprechpartnerCreate.value);
       getData();
       cancelResetButton();
-      toast.success("Ansprechpartner wurde erstellt.", {
+      toast.success("Mitarbeiter wurde erstellt.", {
         timeout: 3000,
       });
     }
@@ -366,7 +366,7 @@ const deleteSubmitButtton = (id) => {
   axios.delete(`/api/ansprechpartner/${id}`);
   getData();
   showModalDelete.value = false;
-  toast.success("Ansprechpartner wurde gelöscht.", {
+  toast.success("Mitarbeiter wurde gelöscht.", {
     timeout: 3000,
   });
 };

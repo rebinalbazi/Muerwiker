@@ -54,7 +54,7 @@
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 1"
+            label="Ansprechpartner 1"
             path="a1ValueCreate"
           >
             <n-select
@@ -65,14 +65,14 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 1"
+              placeholder="Ansprechpartner 1"
               filterable
             />
           </n-form-item-gi>
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 2"
+            label="Ansprechpartner 2"
             path="a2ValueCreate"
           >
             <n-select
@@ -83,7 +83,7 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 2"
+              placeholder="Ansprechpartner 2"
               filterable
             />
           </n-form-item-gi>
@@ -153,7 +153,7 @@
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 1"
+            label="Ansprechpartner 1"
             path="a1ValueEdit"
           >
             <n-select
@@ -164,14 +164,14 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 1"
+              placeholder="Ansprechpartner 1"
               filterable
             />
           </n-form-item-gi>
 
           <n-form-item-gi
             :span="24"
-            label="Ansprechparner 2"
+            label="Ansprechpartner 2"
             path="a2ValueEdit"
           >
             <n-select
@@ -182,7 +182,7 @@
                 })
               "
               clearable
-              placeholder="Ansprechparner 2"
+              placeholder="Ansprechpartner 2"
               filterable
             />
           </n-form-item-gi>
@@ -220,7 +220,7 @@
     title="Tagesstätte löschen"
   >
     <div style="padding-bottom: 12.5px">
-      Bist du dir sicher, dass du diesen Tagesstätte löschen möchtest?
+      Bist du dir sicher, dass du diese Tagesstätte löschen möchtest?
     </div>
     <n-button type="info" @click="deleteSubmitButtton()"> Bestätigen </n-button>
     <n-button
