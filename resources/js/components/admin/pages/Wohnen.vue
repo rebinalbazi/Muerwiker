@@ -41,17 +41,17 @@
             />
           </n-form-item-gi>
 
-          <n-form-item-gi :span="24" label="Strasse*" path="telefonValueCreate">
-            <n-input v-model:value="telefonValueCreate" placeholder="Strasse" />
+          <n-form-item-gi :span="24" label="Strasse*" path="strasseValueCreate">
+            <n-input v-model:value="strasseValueCreate" placeholder="Strasse" />
           </n-form-item-gi>
 
           <n-form-item-gi
             :span="24"
             label="Notfallnummer*"
-            path="emailValueCreate"
+            path="notfallnummerValueCreate"
           >
             <n-input
-              v-model:value="emailValueCreate"
+              v-model:value="notfallnummerValueCreate"
               placeholder="Notfallnummer"
             />
           </n-form-item-gi>
@@ -228,7 +228,7 @@
     title="Wohnort löschen"
   >
     <div style="padding-bottom: 12.5px">
-      Bist du dir sicher, dass du diesen Wohnen löschen möchtest?
+      Bist du dir sicher, dass du diesen Wohnort löschen möchtest?
     </div>
     <n-button type="info" @click="deleteSubmitButtton()"> Bestätigen </n-button>
     <n-button
@@ -254,16 +254,16 @@ let showModalEdit = ref(false);
 let showModalDelete = ref(false);
 
 let ortValueCreate = ref(null);
-let telefonValueCreate = ref(null);
-let emailValueCreate = ref(null);
+let strasseValueCreate = ref(null);
+let notfallnummerValueCreate = ref(null);
 let imagePathValueCreate = ref(null);
 let a1ValueCreate = ref(null);
 let a2ValueCreate = ref(null);
 
 let wohnenCreate = ref({
   ort: ortValueCreate,
-  strasse: telefonValueCreate,
-  notfallnummer: emailValueCreate,
+  strasse: strasseValueCreate,
+  notfallnummer: notfallnummerValueCreate,
   imagePath: imagePathValueCreate,
   ansprechpartner1_id: a1ValueCreate,
   ansprechpartner2_id: a1ValueCreate !== null ? a2ValueCreate : null,
@@ -474,8 +474,8 @@ const createSubmitButton = () => {
 
 const cancelResetButton = () => {
   ortValueCreate.value = null;
-  telefonValueCreate.value = null;
-  emailValueCreate.value = null;
+  strasseValueCreate.value = null;
+  notfallnummerValueCreate.value = null;
   imagePathValueCreate.value = null;
   a1ValueCreate.value = null;
   a2ValueCreate.value = null;
