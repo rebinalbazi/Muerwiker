@@ -247,8 +247,8 @@ const columns = reactive([
             }),
         }
       );
-    },
-  },
+    }
+  }
 ]);
 
 onMounted(() => {
