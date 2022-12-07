@@ -64,7 +64,7 @@
       },
       {
         id: "2",
-        name: "Niebüll",
+        name: "Niebuell",
         iconPath: "https://i.postimg.cc/k4m83wDR/2435-210-1-g-Cropped.jpg"
       }
     ];
