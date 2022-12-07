@@ -372,8 +372,8 @@ const optionsOrt = [
     value: "Flensburg",
   },
   {
-    label: "Niebuell",
-    value: "Niebuell",
+    label: "Niebüll",
+    value: "Niebüll",
   },
 ];
 
