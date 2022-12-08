@@ -88,17 +88,6 @@
             />
           </n-form-item-gi>
 
-          <n-form-item-gi
-            :span="24"
-            label="Bild URL"
-            path="imagePathValueCreate"
-          >
-            <n-input
-              v-model:value="imagePathValueCreate"
-              placeholder="Bild URL"
-            />
-          </n-form-item-gi>
-
           <n-gi :span="24">
             <div style="display: flex; justify-content: flex">
               <n-button type="info" @click="createSubmitButton()">
@@ -130,15 +119,16 @@
     <div>
       <n-form ref="formRef" label-placement="top">
         <n-grid :span="24" :x-gap="24">
-          <!-- <n-form-item-gi :span="24" label="Ort*" path="ortValueEdit">
+          <n-form-item-gi :span="24" label="Ort*" path="ortValueEdit">
             <n-space vertical>
               <n-select
+              disabled
                 v-model:value="ortValueEdit"
                 :options="optionsOrt"
                 placeholder="Ort"
               />
             </n-space>
-          </n-form-item-gi> -->
+          </n-form-item-gi>
 
           <n-form-item-gi
             :span="24"
@@ -184,13 +174,6 @@
               clearable
               placeholder="Ansprechpartner 2"
               filterable
-            />
-          </n-form-item-gi>
-
-          <n-form-item-gi :span="24" label="Bild URL" path="imagePathValueEdit">
-            <n-input
-              v-model:value="imagePathValueEdit"
-              placeholder="Bild URL"
             />
           </n-form-item-gi>
 
@@ -248,14 +231,12 @@ let showModalDelete = ref(false);
 let ortValueCreate = ref(null);
 
 let notfallnummerValueCreate = ref(null);
-let imagePathValueCreate = ref(null);
 let a1ValueCreate = ref(null);
 let a2ValueCreate = ref(null);
 
 let tagesstaetteCreate = ref({
   ort: ortValueCreate,
   notfallnummer: notfallnummerValueCreate,
-  imagePath: imagePathValueCreate,
   ansprechpartner1_id: a1ValueCreate,
   ansprechpartner2_id: a1ValueCreate !== null ? a2ValueCreate : null,
 });
@@ -263,7 +244,6 @@ let tagesstaetteCreate = ref({
 let idValueEdit = ref(null);
 let ortValueEdit = ref(null);
 let notfallnummerValueEdit = ref(null);
-let imagePathValueEdit = ref(null);
 let a1ValueEdit = ref(null);
 let a2ValueEdit = ref(null);
 
@@ -271,7 +251,6 @@ let tagesstaetteEdit = ref({
   id: idValueEdit,
   ort: ortValueEdit,
   notfallnummer: notfallnummerValueEdit,
-  imagePath: imagePathValueEdit,
   ansprechpartner1_id: a1ValueEdit,
   ansprechpartner2_id: a2ValueEdit,
 });
@@ -327,26 +306,26 @@ const columns = reactive([
       );
     },
   },
-//   {
-//     key: "actionsDelete",
-//     width: 0,
-//     render(row) {
-//       return h(
-//         NButton,
-//         {
-//           size: "small",
-//           onClick: () => deleteButton(row),
-//         },
-//         {
-//           default: () =>
-//             h("img", {
-//               width: "17.5",
-//               src: "https://cdn-icons-png.flaticon.com/512/1214/1214428.png",
-//             }),
-//         }
-//       );
-//     }
-//   }
+  //   {
+  //     key: "actionsDelete",
+  //     width: 0,
+  //     render(row) {
+  //       return h(
+  //         NButton,
+  //         {
+  //           size: "small",
+  //           onClick: () => deleteButton(row),
+  //         },
+  //         {
+  //           default: () =>
+  //             h("img", {
+  //               width: "17.5",
+  //               src: "https://cdn-icons-png.flaticon.com/512/1214/1214428.png",
+  //             }),
+  //         }
+  //       );
+  //     }
+  //   }
 ]);
 
 const optionsOrt = [
@@ -426,26 +405,12 @@ const createSubmitButton = () => {
     tagesstaetteCreate.value.notfallnummer !== null &&
     tagesstaetteCreate.value.notfallnummer !== ""
   ) {
-    if (
-      tagesstaetteCreate.value.imagePath === null ||
-      tagesstaetteCreate.value.imagePath === ""
-    ) {
-      tagesstaetteCreate.value.imagePath =
-        "https://cdn-icons-png.flaticon.com/512/1829/1829552.png";
-      axios.post("/api/tagesstaette", tagesstaetteCreate.value);
-      getData();
-      cancelResetButton();
-      toast.success("Tagesstätte wurde erstellt.", {
-        timeout: 3000,
-      });
-    } else {
-      axios.post("/api/tagesstaette", tagesstaetteCreate.value);
-      getData();
-      cancelResetButton();
-      toast.success("Tagesstätte wurde erstellt.", {
-        timeout: 3000,
-      });
-    }
+    axios.post("/api/tagesstaette", tagesstaetteCreate.value);
+    getData();
+    cancelResetButton();
+    toast.success("Tagesstätte wurde erstellt.", {
+      timeout: 3000,
+    });
   } else {
     toast.error("Bitte alle Pflichtfelder ausfüllen.", {
       timeout: 3000,
@@ -456,7 +421,6 @@ const createSubmitButton = () => {
 const cancelResetButton = () => {
   ortValueCreate.value = null;
   notfallnummerValueCreate.value = null;
-  imagePathValueCreate.value = null;
   a1ValueCreate.value = null;
   a2ValueCreate.value = null;
   showModalCreate.value = false;
@@ -466,7 +430,6 @@ const editButton = (row) => {
   idValueEdit.value = row.id;
   ortValueEdit.value = row.ort;
   notfallnummerValueEdit.value = row.notfallnummer;
-  imagePathValueEdit.value = row.imagePath;
   a1ValueEdit.value = row.ansprechpartner1_id;
   a2ValueEdit.value = row.ansprechpartner2_id;
   showModalEdit.value = true;
@@ -479,26 +442,15 @@ const editSubmitButton = () => {
     tagesstaetteEdit.value.notfallnummer !== null &&
     tagesstaetteEdit.value.notfallnummer !== ""
   ) {
-    if (
-      tagesstaetteEdit.value.imagePath === null ||
-      tagesstaetteEdit.value.imagePath === ""
-    ) {
-      tagesstaetteCreate.value.imagePath =
-        "https://cdn-icons-png.flaticon.com/512/1829/1829552.png";
-      axios.put(`/api/tagesstaette/${tagesstaetteEdit.value.id}`, tagesstaetteEdit.value);
-      getData();
-      showModalEdit.value = false;
-      toast.success("Gespeichert.", {
-        timeout: 3000,
-      });
-    } else {
-      axios.put(`/api/tagesstaette/${tagesstaetteEdit.value.id}`, tagesstaetteEdit.value);
-      getData();
-      showModalEdit.value = false;
-      toast.success("Gespeichert.", {
-        timeout: 3000,
-      });
-    }
+    axios.put(
+      `/api/tagesstaette/${tagesstaetteEdit.value.id}`,
+      tagesstaetteEdit.value
+    );
+    getData();
+    showModalEdit.value = false;
+    toast.success("Gespeichert.", {
+      timeout: 3000,
+    });
   } else {
     toast.error("Bitte alle Pflichtfelder ausfüllen.", {
       timeout: 3000,
