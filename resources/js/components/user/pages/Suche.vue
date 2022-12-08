@@ -11,7 +11,10 @@
   <div class="row">
     <div class="col-md-9">
       <va-card class="table">
-        <va-card-content style="padding: 0px">
+        <div class="table-header">
+        <h4 style="display: inline-block">Mitarbeiter</h4>
+      </div>
+        <va-card-content style="padding: 0px 12px 0px 12px">
           <n-data-table
             :bordered="true"
             :columns="columns"
@@ -106,5 +109,9 @@ onMounted(() => {
 .backButton {
   border: 0;
   background: transparent;
+}
+
+.table-header {
+  padding: 10px 0px 0px 12px;
 }
 </style>

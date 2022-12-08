@@ -1,6 +1,6 @@
 <template>
     <div class="search" >
-      <input class="searchField" type="text" placeholder="Suche" v-model="searchKey"/>
+      <input class="searchField" type="text" placeholder="Mitarbeiter suchen" v-model="searchKey"/>
       <router-link style="text-decoration: none;" :to="`/suche/${searchKey}`">
       <button class="searchButton">
         <img src="https://cdn-icons-png.flaticon.com/512/3031/3031293.png" style="max-width: 15px"/>
