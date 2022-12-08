@@ -17,7 +17,7 @@
   
     <div class="row" v-if="route.params.art == 'tagesstaette'">
       <div class="col col-lg-3" style="padding: 12px" v-for="ort in orte" :key="ort.id">
-        <router-link style="text-decoration: none" :to="`/${route.params.art}/${ort.id}`">
+        <router-link style="text-decoration: none" :to="`/${route.params.art}/null/${ort.id}`">
           <n-list hoverable bordered>
             <n-list-item style="padding: 12px">
               <img v-bind:src="ort.iconPath" style="max-width: 100%" />
@@ -32,7 +32,7 @@
   
     <div class="row" v-if="route.params.art == 'verwaltung' || route.params.art == 'sonstige'">
       <div class="col-md-3" style="padding: 12px" v-for="v in data" :key="v.id">
-        <router-link style="text-decoration: none" :to="`/${route.params.art}/${v.id}`">
+        <router-link style="text-decoration: none" :to="`/${route.params.art}/null/${v.id}`">
           <n-list hoverable bordered>
             <n-list-item style="padding: 12px">
               <img v-bind:src="v.iconPath" style="max-width: 100%; max-height: 200px; margin-left: auto; margin-right: auto; display: block;"/>

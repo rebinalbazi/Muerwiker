@@ -27,15 +27,17 @@
                   <strong>Telefon:</strong>
                 </div>
                 <div class="infoDescription">
-                  <strong style="font-size: 17px">{{ ansprechpartner1.telefon }}</strong>
+                  <strong style="font-size: 17px;">
+                    <a class="emailInfo" :href="('tel:' + ansprechpartner1.telefon)">{{ ansprechpartner1.telefon }}</a>
+                  </strong>
                 </div>
                 <div class="infoTitle" style="height: 57px; width: 32.5%">
                   <strong style="font-size: 17px">Email:</strong>
                 </div>
                 <div class="infoDescription" style="height: 57px">
                   <strong style="font-size: 17px; overflow-wrap: break-word; padding-left: 5px">
-                    {{ ansprechpartner1.email }}
-                    </strong>
+                    <a class="emailInfo" :href="'mailto:' + ansprechpartner1.email">{{ ansprechpartner1.email }}</a>
+                  </strong>
                 </div>
               </div>
             </div>
@@ -67,15 +69,17 @@
                   <strong>Telefon:</strong>
                 </div>
                 <div class="infoDescription">
-                  <strong style="font-size: 17px">{{ ansprechpartner2.telefon }}</strong>
+                  <strong style="font-size: 17px;">
+                    <a class="emailInfo" :href="('tel:' + ansprechpartner2.telefon)">{{ ansprechpartner2.telefon }}</a>
+                  </strong>
                 </div>
                 <div class="infoTitle" style="height: 57px; width: 32.5%">
                   <strong style="font-size: 17px;">Email:</strong>
                 </div>
                 <div class="infoDescription" style="height: 57px">
-                  <strong style="font-size: 17px; overflow-wrap: break-word; padding-left: 5px;">
-                    {{ ansprechpartner2.email }}
-                    </strong>
+                  <strong style="font-size: 17px; overflow-wrap: break-word; padding-left: 5px">
+                    <a class="emailInfo" :href="'mailto:' + ansprechpartner2.email">{{ ansprechpartner2.email }}</a>
+                  </strong>
                 </div>
               </div>
             </div>
@@ -195,6 +199,11 @@
     background: white;
     margin-top: 20px;
     border-width: 0.25ch;
+  }
+  
+  .emailInfo{
+    text-decoration: none;
+    color: black;
   }
   
   </style>
