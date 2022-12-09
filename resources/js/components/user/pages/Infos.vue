@@ -1,7 +1,7 @@
 <template>
-    <backButton /> 
-    <span v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / {{ route.params.ort }} / {{ strasse }}</span>
-    <span v-if="route.params.art == 'tagesstaette' || route.params.art == 'verwaltung' || route.params.art == 'sonstige'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / {{ bereich ? bereich : ort }}</span>
+    <backButton />
+    <span class="history" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / {{ route.params.ort }} / {{ strasse }}</span>
+    <span class="history" v-if="route.params.art == 'tagesstaette' || route.params.art == 'verwaltung' || route.params.art == 'sonstige'" >{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / {{ bereich ? bereich : ort }}</span>
     <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten' || (route.path).split('/')[1] == 'tagesstaette' || (route.path).split('/')[1] == 'verwaltung'|| (route.path).split('/')[1] == 'sonstige'">
       <div class="col-md-8" style="padding: 12px; max-width: 100%">
         <n-list bordered v-if="ansprechpartner1 !== null">
@@ -214,5 +214,9 @@
     text-decoration: none;
     color: black;
   }
-  
+
+  .history{
+    font-size: 17px;
+    padding-left: 30px;
+  }
   </style>

@@ -1,7 +1,7 @@
 <template>
-    <backButton /> 
-    <span v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} /</span>
-    <span v-if="route.params.art == 'tagesstaette' || route.params.art == 'verwaltung' || route.params.art == 'sonstige'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} /</span>
+    <backButton />
+    <span class="history" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / </span>
+    <span class="history" v-if="route.params.art == 'tagesstaette' || route.params.art == 'verwaltung' || route.params.art == 'sonstige'">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / </span>
     <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'">
       <div class="col col-lg-3" style="padding: 12px;" v-for="ort in orte" :key="ort.id">
         <router-link style="text-decoration: none" :to="`/${route.params.art}/${ort.name}`">
@@ -68,7 +68,12 @@
         id: "2",
         name: "Niebüll",
         iconPath: "https://i.postimg.cc/k4m83wDR/2435-210-1-g-Cropped.jpg"
-      }
+      },
+      {
+        id: "3",
+        name: "Schleswig",
+        iconPath: "https://i.postimg.cc/BvJ3xvdG/5815c901-18a0-4f90-ac0b-1a4b0a0a916c-l.jpg"
+      },
     ];
   
     if (route.params.art == 'verwaltung') {
@@ -86,5 +91,8 @@
   </script>
   
   <style lang="scss">
-  
+  .history{
+    font-size: 15px;
+    padding-left: 30px;
+  }
   </style>

@@ -94,6 +94,5 @@
     border-color: #418bca;
     border-width: 0.125ch;
   }
-  
   </style>
     

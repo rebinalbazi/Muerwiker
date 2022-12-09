@@ -337,6 +337,10 @@ const optionsOrt = [
     label: "Niebüll",
     value: "Niebüll",
   },
+  {
+    label: "Schleswig",
+    value: "Schleswig",
+  }
 ];
 
 let optionsAnsprechpartner = ref([]);

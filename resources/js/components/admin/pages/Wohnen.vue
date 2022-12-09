@@ -228,7 +228,7 @@
     title="Wohnen löschen"
   >
     <div style="padding-bottom: 12.5px">
-      Bist du dir sicher, dass du diesen Wohnen löschen möchtest?
+      Bist du dir sicher, dass du dies löschen möchtest?
     </div>
     <n-button type="info" @click="deleteSubmitButtton()"> Bestätigen </n-button>
     <n-button
@@ -375,6 +375,10 @@ const optionsOrt = [
     label: "Niebüll",
     value: "Niebüll",
   },
+  {
+    label: "Schleswig",
+    value: "Schleswig",
+  }
 ];
 
 let optionsAnsprechpartner = ref([]);
