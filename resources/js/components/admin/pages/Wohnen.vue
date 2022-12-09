@@ -2,7 +2,7 @@
   <div class="row">
     <va-card class="table">
       <div class="table-header">
-        <h4 style="display: inline-block">Wohnort</h4>
+        <h4 style="display: inline-block">Wohnen</h4>
         <button class="addButton" @click="showModalCreate = true">
           <img
             src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"
@@ -28,7 +28,7 @@
     style="margin: 0% 13% 3% 13%"
   >
     <template #header>
-      <div>Wohnort hinzufügen</div>
+      <div>Wohnen hinzufügen</div>
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -129,7 +129,7 @@
     style="margin: 0% 13% 3% 13%"
   >
     <template #header>
-      <div>Wohnort bearbeiten</div>
+      <div>Wohnen bearbeiten</div>
     </template>
     <div>
       <n-form ref="formRef" label-placement="top">
@@ -225,10 +225,10 @@
     class="deleteModal"
     v-model:show="showModalDelete"
     preset="dialog"
-    title="Wohnort löschen"
+    title="Wohnen löschen"
   >
     <div style="padding-bottom: 12.5px">
-      Bist du dir sicher, dass du diesen Wohnort löschen möchtest?
+      Bist du dir sicher, dass du diesen Wohnen löschen möchtest?
     </div>
     <n-button type="info" @click="deleteSubmitButtton()"> Bestätigen </n-button>
     <n-button
@@ -454,14 +454,14 @@ const createSubmitButton = () => {
       axios.post("/api/wohnen", wohnenCreate.value);
       getData();
       cancelResetButton();
-      toast.success("Wohnort wurde erstellt.", {
+      toast.success("Wohnen wurde erstellt.", {
         timeout: 3000,
       });
     } else {
       axios.post("/api/wohnen", wohnenCreate.value);
       getData();
       cancelResetButton();
-      toast.success("Wohnort wurde erstellt.", {
+      toast.success("Wohnen wurde erstellt.", {
         timeout: 3000,
       });
     }
@@ -539,7 +539,7 @@ const deleteSubmitButtton = (id) => {
   axios.delete(`/api/wohnen/${id}`);
   getData();
   showModalDelete.value = false;
-  toast.success("Wohnort wurde gelöscht.", {
+  toast.success("Wohnen wurde gelöscht.", {
     timeout: 3000,
   });
 };

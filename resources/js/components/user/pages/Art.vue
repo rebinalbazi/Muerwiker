@@ -1,6 +1,6 @@
 <template>
     <div class="search" >
-      <input class="searchField" type="text" placeholder="Mitarbeiter suchen" v-model="searchKey"/>
+      <input class="searchField" type="text" placeholder="Ansprechpartner suchen" v-model="searchKey"/>
       <router-link style="text-decoration: none;" :to="`/suche/${searchKey}`">
       <button class="searchButton">
         <img src="https://cdn-icons-png.flaticon.com/512/3031/3031293.png" style="max-width: 15px"/>
@@ -22,7 +22,7 @@
                   <template #trigger>
                       <img style="position:absolute; right: 0; border-radius: 50%; max-width: 20px;" src="https://cdn-icons-png.flaticon.com/512/84/84264.png"/>
                   </template>
-                  <span>{{ art.infoText }}</span>
+                  <span style="font-size: 17px">{{ art.infoText }}</span>
                 </n-popover>
               </div>
             </n-list-item>

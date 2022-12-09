@@ -35,15 +35,15 @@ export default {
     routesAdmin: [
         {
             name: 'ansprechpartner',
-            displayName: 'Mitarbeiter',
+            displayName: 'Ansprechpartner',
         },
         {
             name: 'wohnen',
-            displayName: 'Wohnort',
+            displayName: 'Wohnen',
         },
         {
             name: 'arbeit',
-            displayName: 'Arbeitsort',
+            displayName: 'Arbeit',
         },
         {
             name: 'tagesstaette',

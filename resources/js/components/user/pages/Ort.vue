@@ -1,5 +1,7 @@
 <template>
-    <backButton />
+    <backButton /> 
+    <span v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} /</span>
+    <span v-if="route.params.art == 'tagesstaette' || route.params.art == 'verwaltung' || route.params.art == 'sonstige'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} /</span>
     <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'">
       <div class="col col-lg-3" style="padding: 12px;" v-for="ort in orte" :key="ort.id">
         <router-link style="text-decoration: none" :to="`/${route.params.art}/${ort.name}`">

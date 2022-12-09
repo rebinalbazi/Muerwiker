@@ -1,5 +1,7 @@
 <template>
-    <backButton />
+    <backButton /> 
+    <span v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / {{ route.params.ort }} / {{ strasse }}</span>
+    <span v-if="route.params.art == 'tagesstaette' || route.params.art == 'verwaltung' || route.params.art == 'sonstige'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / {{ bereich ? bereich : ort }}</span>
     <div class="row" v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten' || (route.path).split('/')[1] == 'tagesstaette' || (route.path).split('/')[1] == 'verwaltung'|| (route.path).split('/')[1] == 'sonstige'">
       <div class="col-md-8" style="padding: 12px; max-width: 100%">
         <n-list bordered v-if="ansprechpartner1 !== null">
@@ -18,24 +20,24 @@
               </div>
               <div class="col-md-8" style="padding-left: 20px; max-width: 100%">
                 <div class="infoTitle" style="width: 32.5%">
-                  <strong style="font-size: 17px">Name:</strong>
+                  <strong style="font-size: 18px">Name:</strong>
                 </div>
                 <div class="infoDescription">
-                  <strong style="font-size: 17px">{{ ansprechpartner1.name }} </strong>
+                  <strong style="font-size: 18px">{{ ansprechpartner1.name }} </strong>
                 </div>
                 <div class="infoTitle" style="width: 32.5%">
                   <strong>Telefon:</strong>
                 </div>
                 <div class="infoDescription">
-                  <strong style="font-size: 17px;">
+                  <strong style="font-size: 18px;">
                     <a class="emailInfo" :href="('tel:' + ansprechpartner1.telefon)">{{ ansprechpartner1.telefon }}</a>
                   </strong>
                 </div>
                 <div class="infoTitle" style="height: 57px; width: 32.5%">
-                  <strong style="font-size: 17px">Email:</strong>
+                  <strong style="font-size: 18px">Email:</strong>
                 </div>
                 <div class="infoDescription" style="height: 57px">
-                  <strong style="font-size: 17px; overflow-wrap: break-word; padding-left: 5px">
+                  <strong style="font-size: 18px; overflow-wrap: break-word; padding-left: 5px">
                     <a class="emailInfo" :href="'mailto:' + ansprechpartner1.email">{{ ansprechpartner1.email }}</a>
                   </strong>
                 </div>
@@ -60,24 +62,24 @@
               </div>
               <div class="col-md-8" style="padding-left: 20px; max-width: 100%">
                 <div class="infoTitle" style="width: 32.5%">
-                  <strong style="font-size: 17px">Name:</strong>
+                  <strong style="font-size: 18px">Name:</strong>
                 </div>
                 <div class="infoDescription">
-                  <strong style="font-size: 17px">{{ ansprechpartner2.name }}</strong>
+                  <strong style="font-size: 18px">{{ ansprechpartner2.name }}</strong>
                 </div>
                 <div class="infoTitle" style="width: 32.5%">
                   <strong>Telefon:</strong>
                 </div>
                 <div class="infoDescription">
-                  <strong style="font-size: 17px;">
+                  <strong style="font-size: 18px;">
                     <a class="emailInfo" :href="('tel:' + ansprechpartner2.telefon)">{{ ansprechpartner2.telefon }}</a>
                   </strong>
                 </div>
                 <div class="infoTitle" style="height: 57px; width: 32.5%">
-                  <strong style="font-size: 17px;">Email:</strong>
+                  <strong style="font-size: 18px;">Email:</strong>
                 </div>
                 <div class="infoDescription" style="height: 57px">
-                  <strong style="font-size: 17px; overflow-wrap: break-word; padding-left: 5px">
+                  <strong style="font-size: 18px; overflow-wrap: break-word; padding-left: 5px">
                     <a class="emailInfo" :href="'mailto:' + ansprechpartner2.email">{{ ansprechpartner2.email }}</a>
                   </strong>
                 </div>
@@ -104,7 +106,7 @@
               </h4>
             </button>
           </router-link>
-          <form v-bind:action="'tel:' + notfallnummer">
+          <form v-bind:action="'tel:' + notfallnummer" v-if="notfallnummer">
             <button class="warningDiv" style="padding: 12px; width: 160px">
             <img src="https://cdn-icons-png.flaticon.com/512/179/179386.png" style="max-width: 70px;"/>
               <h4 style="padding-top: 10px">
@@ -128,10 +130,17 @@
   let notfallnummer = ref({})
   let ansprechpartner1 = ref({});
   let ansprechpartner2 = ref({});
+
+  const strasse = ref();
+  const bereich = ref();
+  const ort = ref();
   
   const getData = (art, param) => {
     axios.get("/api/ansprechpartner").then((response) => {
       axios.get("/api/" + art).then((r) => {
+      strasse.value = r.data[route.params.infos - 1].strasse
+      bereich.value = r.data[route.params.infos - 1].bereich
+      ort.value = r.data[route.params.infos - 1].ort
       notfallnummer.value = Object.assign({}, ...r.data.filter((t) => t["id"] == param)).notfallnummer;
       let data = Object.assign({}, ...r.data.filter((t) => t["id"] == param));
       ansprechpartner1.value = Object.assign({}, ...response.data.filter((t) => t["id"] == data.ansprechpartner1_id));
@@ -177,7 +186,7 @@
     background: aliceblue;
     max-width: 100%;
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 18px;
     float: left;
   }
   

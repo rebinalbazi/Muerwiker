@@ -1,5 +1,6 @@
 <template>
-    <backButton />
+    <backButton /> 
+    <span v-if="route.params.art == 'wohnen' || route.params.art == 'arbeiten'" style="padding: 20px">{{ route.params.art.charAt(0).toUpperCase() + route.params.art.slice(1) }} / {{ route.params.ort }}</span>
     <div class="row" v-if="route.params.art == 'wohnen'">
       <div class="col-md-3" style="padding: 12px"
         v-for="w in wohnen.filter((t) => t['ort'] == route.params.ort)" :key="w.id">
@@ -20,7 +21,7 @@
     </div>
   
     <div class="row" v-if="route.params.art == 'arbeiten'">
-      <div class="col-md-3" style="padding: 12px"
+      <div class="col-md-4" style="padding: 12px"
         v-for="a in arbeiten.filter((t) => t['ort'] == route.params.ort)"
         :key="a.id">
         <router-link style="text-decoration: none" :to="`/${route.params.art}/${route.params.ort}/${a.id}`">
@@ -28,13 +29,13 @@
             <n-list-item style="padding: 12px; text-align: center; vertical-align: middle;">
               <div style="text-align: left">
                 <h3 style="text-transform: none; text-align: center">
-                  <strong style="font-size: 17px">{{ a.strasse }}</strong>
+                  <strong style="font-size: 24px">{{ a.strasse }}</strong>
                 </h3>
                 <hr>
                 <h5 style="text-transform: none;">
-                  <strong style="font-size: 15px">Arbeitsbereiche:</strong>
+                  <strong style="font-size: 21px">Arbeitsbereiche:</strong>
                 </h5>
-                <form style="min-height: 90px">
+                <form style="min-height: 90px; font-size: 19px;">
                   {{ a.arbeitsbereiche }}
                 </form>
               </div>

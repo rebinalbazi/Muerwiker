@@ -12,7 +12,7 @@
     <div class="col-md-9">
       <va-card class="table">
         <div class="table-header">
-        <h4 style="display: inline-block">Mitarbeiter</h4>
+        <h4 style="display: inline-block">Ansprechpartner</h4>
       </div>
         <va-card-content style="padding: 0px 12px 0px 12px">
           <n-data-table
