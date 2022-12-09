@@ -8,10 +8,11 @@
       <strong style="font-size: 20px" onclick="history.back()"> Zurück </strong>
     </button>
   </router-link>
+  <span class="history"> Suche / {{ route.params.infos }}</span>
   <div class="row">
     <div class="col-md-9">
       <va-card class="table">
-        <div class="table-header">
+        <div class="table-header-info">
         <h4 style="display: inline-block">Ansprechpartner</h4>
       </div>
         <va-card-content style="padding: 0px 12px 0px 12px">
@@ -31,10 +32,10 @@
           <img
             src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
             style="
-              max-width: 70px;
-              margin-left: auto;
-              margin-right: auto;
-              display: block;
+            max-width: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
             "
           />
           <h4>
@@ -111,7 +112,20 @@ onMounted(() => {
   background: transparent;
 }
 
-.table-header {
+.table-header-info {
   padding: 10px 0px 0px 12px;
 }
+
+.n-data-table-thead{
+  font-size: 17px;
+}
+
+.n-data-table-tbody{
+  font-size: 16px;
+}
+
+.history {
+    font-size: 15px;
+    padding-left: 30px;
+  }
 </style>
