@@ -51,13 +51,13 @@
           <n-list-item style="padding: 12px; text-align: center; vertical-align: middle;">
             <div style="text-align: left">
               <h3 style="text-transform: none; text-align: center">
-                <strong style="font-size: 24px">{{ a.strasse }}</strong>
+                <strong style="font-size: 22px">{{ a.strasse }}</strong>
               </h3>
               <hr>
               <h5 style="text-transform: none;">
-                <strong style="font-size: 21px">Arbeitsbereiche:</strong>
+                <strong style="font-size: 20px">Arbeitsbereiche:</strong>
               </h5>
-              <form style="min-height: 90px; font-size: 19px;">
+              <form style="min-height: 90px; font-size: 18px;">
                 {{ a.arbeitsbereiche }}
               </form>
             </div>
@@ -113,7 +113,7 @@
 
 <style lang="scss">
   .history {
-    font-size: 15px;
+    font-size: 17px;
     padding-left: 30px;
   }
 </style>
