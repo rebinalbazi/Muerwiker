@@ -135,6 +135,7 @@
   const bereich = ref();
   const ort = ref();
   
+  // get ansprechpartner data and assign with type of choose
   const getData = (art, param) => {
     axios.get("/api/ansprechpartner").then((response) => {
       axios.get("/api/" + art).then((r) => {
@@ -154,6 +155,7 @@
   };
   
   onMounted(() => {
+    // check data if have route params
     if (route.params.art) {
       getData(route.params.art, route.params.infos);
     } else {
@@ -175,6 +177,7 @@
     max-width: 100%;
     margin-top: 10px;
   }
+  
   .infoTitle {
     padding: 0px 20px 0px 20px;
     text-align: center;

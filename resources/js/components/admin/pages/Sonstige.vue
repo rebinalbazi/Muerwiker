@@ -346,10 +346,12 @@ onMounted(() => {
 });
 
 const getData = () => {
+  //get all sonstige data 
   axios.get("/api/sonstige").then((response) => {
     sonstigeData.value = response.data;
   });
-
+  
+  // get ansprechpartner data and assign with type of sonstige
   axios.get("/api/ansprechpartner").then((response) => {
     ansprechpartnerData.value = response.data;
     sonstigeData.value.forEach((element) => {
@@ -394,6 +396,7 @@ const getData = () => {
   });
 };
 
+// on click submit Button to create new one
 const createSubmitButton = () => {
   if (
     sonstigeCreate.value.bereich !== null &&
@@ -428,6 +431,7 @@ const createSubmitButton = () => {
   }
 };
 
+// canel button that reset current data and close modal
 const cancelResetButton = () => {
   bereichValueCreate.value = null;
   notfallnummerValueCreate.value = null;
@@ -437,6 +441,7 @@ const cancelResetButton = () => {
   showModalCreate.value = false;
 };
 
+// to assign current data to edit modal field 
 const editButton = (row) => {
   idValueEdit.value = row.id;
   bereichValueEdit.value = row.bereich;
@@ -447,6 +452,7 @@ const editButton = (row) => {
   showModalEdit.value = true;
 };
 
+// on click submit button to save changes
 const editSubmitButton = () => {
   if (
     sonstigeEdit.value.bereich !== null &&
@@ -487,11 +493,13 @@ const editSubmitButton = () => {
   }
 };
 
+// delete button to open warning modal with assign current id
 const deleteButton = (row) => {
   deleteId.value = row.id;
   showModalDelete.value = true;
 };
 
+// on click delete button to delete ansprechpartner from database
 const deleteSubmitButtton = (id) => {
   id = deleteId.value;
   axios.delete(`/api/sonstige/${id}`);

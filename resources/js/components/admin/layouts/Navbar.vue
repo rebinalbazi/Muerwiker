@@ -50,6 +50,7 @@ export default {
     ...mapActions({
       signOut: "auth/logout",
     }),
+    //logout
     async logout() {
       await axios.post("/logout").then(({ data }) => {
         this.signOut();

@@ -79,10 +79,12 @@ const columns = reactive([
 let ansprechpartner = ref([]);
 
 onMounted(() => {
+  // get ansprechpartner data
   axios.get("/api/ansprechpartner").then((response) => {
     ansprechpartner.value = response.data;
   });
 
+  //check route params if existed
   if (route.params.length !== 0 && route.params.infos !== undefined) {
     axios.get("/api/ansprechpartner").then((response) => {
       ansprechpartner.value = response.data.filter((t) =>

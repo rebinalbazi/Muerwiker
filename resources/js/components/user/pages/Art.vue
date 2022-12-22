@@ -80,6 +80,7 @@
     }
   ]);
 
+  //on press enter key to search
   const onEnter = () => {
     router.push({ path: '/suche/' + searchKey.value })
   }

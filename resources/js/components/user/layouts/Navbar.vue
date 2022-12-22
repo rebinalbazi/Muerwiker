@@ -45,6 +45,7 @@ import NavigationRoutes from "../../../router/NavigationRoutes";
 
 const items = ref(NavigationRoutes.routesUser);
 
+// if route is activated
 function isRouteActive(item) {
   return item.name === useRoute().name;
 }

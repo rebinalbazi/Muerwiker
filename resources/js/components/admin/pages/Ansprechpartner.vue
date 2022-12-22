@@ -255,12 +255,14 @@ onMounted(() => {
   getData();
 });
 
+//get all ansprechpartner data 
 const getData = () => {
   axios.get("/api/ansprechpartner").then((response) => {
     ansprechpartnerData.value = response.data;
   });
 };
 
+// on click submit Button to create new ansprechpartner
 const createSubmitButton = () => {
   if (
     ansprechpartnerCreate.value.name !== null &&
@@ -297,6 +299,7 @@ const createSubmitButton = () => {
   }
 };
 
+// canel button that reset current data and close modal
 const cancelResetButton = () => {
   nameValueCreate.value = null;
   telefonValueCreate.value = null;
@@ -305,6 +308,7 @@ const cancelResetButton = () => {
   showModalCreate.value = false;
 };
 
+// to assign current data to edit modal field 
 const editButton = (row) => {
   idValueEdit.value = row.id;
   nameValueEdit.value = row.name;
@@ -314,6 +318,7 @@ const editButton = (row) => {
   showModalEdit.value = true;
 };
 
+// on click submit button to save changes
 const editSubmitButton = () => {
   if (
     ansprechpartnerEdit.value.name !== null &&
@@ -356,11 +361,13 @@ const editSubmitButton = () => {
   }
 };
 
+// delete button to open warning modal with assign current id
 const deleteButton = (row) => {
   deleteId.value = row.id;
   showModalDelete.value = true;
 };
 
+// on click delete button to delete ansprechpartner from database
 const deleteSubmitButtton = (id) => {
   id = deleteId.value;
   axios.delete(`/api/ansprechpartner/${id}`);

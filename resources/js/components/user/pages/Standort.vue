@@ -116,4 +116,11 @@
     font-size: 17px;
     padding-left: 30px;
   }
+  
+  .homeButton {
+    border-radius: 10px;
+    background: white;
+    border-color: #418bca;
+    border-width: 0.25ch;
+  }
 </style>

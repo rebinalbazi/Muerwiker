@@ -76,12 +76,14 @@
       },
     ];
   
+    //get verwaltung data by condition
     if (route.params.art == 'verwaltung') {
       axios.get("/api/verwaltung").then((response) => {
         data.value = response.data;
       });
     }
-  
+
+    //get sonstige data by condition
     if (route.params.art == 'sonstige') {
       axios.get("/api/sonstige").then((response) => {
         data.value = response.data;

@@ -66,6 +66,7 @@ export default {
         ...mapActions({
             signIn:'auth/login'
         }),
+        //register with condition
         async register(){
             this.processing = true
             await axios.get('/sanctum/csrf-cookie')
