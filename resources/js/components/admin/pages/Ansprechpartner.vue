@@ -3,7 +3,7 @@
     <va-card class="table">
       <div class="table-header">
         <h4 style="display: inline-block">Ansprechpartner</h4>
-        <button class="addButton" @click="showModalCreate = true">
+        <button class="addButton" dusk='add-button' @click="showModalCreate = true">
           <img
             src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"
             style="width: 25px"
@@ -41,7 +41,7 @@
             <n-input v-model:value="telefonValueCreate" placeholder="Telefon" />
           </n-form-item-gi>
 
-          <n-form-item-gi :span="24" label="Email*" path="emailValueCreate">
+          <n-form-item-gi :span="24" label="Email*"  path="emailValueCreate">
             <n-input v-model:value="emailValueCreate" placeholder="Email" />
           </n-form-item-gi>
 
@@ -58,7 +58,7 @@
 
           <n-gi :span="24">
             <div style="display: flex; justify-content: flex">
-              <n-button type="info" @click="createSubmitButton()">
+              <n-button type="info" dusk="save-button" @click="createSubmitButton()">
                 Erstellen
               </n-button>
               <n-button

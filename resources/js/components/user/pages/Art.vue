@@ -1,9 +1,9 @@
 <template>
   <div class="search">
-    <input class="searchField" type="text" placeholder="Ansprechpartner suchen" v-model="searchKey"
+    <input class="searchField" name="suche" type="text" placeholder="Ansprechpartner suchen" v-model="searchKey"
       @keyup.enter="onEnter()" />
     <router-link style="text-decoration: none;" :to="`/suche/${searchKey}`">
-      <button class="searchButton">
+      <button class="searchButton" dusk="suche-button">
         <img src="https://cdn-icons-png.flaticon.com/512/3031/3031293.png" style="max-width: 15px" />
       </button>
     </router-link>

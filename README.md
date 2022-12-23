@@ -18,6 +18,10 @@ http://127.0.0.1:8000/admin/register
 
 Nach der Registrierung ist man direkt im Admin eingelogt.
 
+Tests durchführen:
+$php artisan dusk
+$vendor/bin/phpunit
+
 ---------------------------------------
 
 Optional:
